@@ -1,0 +1,69 @@
+<h2>Finales Design: Die neue Sektion</h2>
+<p class="subtitle">So würde sie zwischen Features und Download-CTA aussehen</p>
+
+<div class="mockup">
+  <div class="mockup-header">Seite — nach Features, vor CTA</div>
+  <div class="mockup-body" style="background:#FAF3E8;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;">
+
+    <!-- Features fade out -->
+    <div style="background:linear-gradient(to bottom,rgba(240,232,216,0.6),transparent);padding:20px 40px 0;display:flex;gap:12px;opacity:0.4;">
+      <div style="flex:1;background:#F0E8D8;border-radius:12px;padding:20px;font-size:11px;color:#888;text-align:center;">Feature 1</div>
+      <div style="flex:1;background:#F0E8D8;border-radius:12px;padding:20px;font-size:11px;color:#888;text-align:center;">Feature 2</div>
+      <div style="flex:1;background:#F0E8D8;border-radius:12px;padding:20px;font-size:11px;color:#888;text-align:center;">Feature 3</div>
+    </div>
+
+    <!-- The actual Statement section -->
+    <div style="padding:80px 48px;max-width:680px;margin:0 auto;text-align:center;">
+
+      <!-- Headline with orange highlight -->
+      <h2 style="font-size:clamp(32px,4.5vw,56px);font-weight:800;line-height:1.1;letter-spacing:-2px;color:#1a1a1a;margin-bottom:28px;">
+        Das alte System kann<br/>
+        <span style="background:linear-gradient(to bottom,transparent 45%,rgba(255,104,0,0.4) 45%);padding:0 6px;border-radius:2px;">gar nicht funktionieren.</span>
+      </h2>
+
+      <!-- Body text -->
+      <p style="font-size:17px;color:#555;line-height:1.7;margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto;">
+        Schüler lernen keine Vokabeln — und Lehrer haben nicht die Kapazität, jedes Mal zu kontrollieren. Soll jede Stunde ein Vokabeltest geschrieben werden? Nein. Das kostet Zeit und schädigt das Verhältnis.
+      </p>
+
+      <!-- Closing quote — bigger, bolder -->
+      <p style="font-size:20px;font-weight:700;color:#1a1a1a;line-height:1.45;letter-spacing:-0.4px;font-style:italic;border-top:1px solid rgba(0,0,0,0.08);padding-top:28px;max-width:480px;margin:0 auto;">
+        „Vokabeln sind nicht nur Wörter im Schulbuch — sondern der Baustein für Beziehungen weit über das eigene Land hinaus."
+      </p>
+
+    </div>
+
+    <!-- CTA fade in -->
+    <div style="background:linear-gradient(to bottom,transparent,rgba(240,232,216,0.4));padding:0 40px 20px;opacity:0.5;text-align:center;">
+      <div style="background:#1a1a1a;color:#FAF3E8;border-radius:12px;padding:14px 28px;display:inline-block;font-size:13px;font-weight:600;">Im App Store laden</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <h3>Technische Details</h3>
+  <div class="options">
+    <div class="option" style="pointer-events:none;opacity:0.85;">
+      <div class="letter">→</div>
+      <div class="content">
+        <h3>Neue Komponente</h3>
+        <p><code>src/components/Statement.jsx</code> + <code>Statement.css</code></p>
+      </div>
+    </div>
+    <div class="option" style="pointer-events:none;opacity:0.85;">
+      <div class="letter">→</div>
+      <div class="content">
+        <h3>Scroll-Animation</h3>
+        <p>Headline wächst per IntersectionObserver rein — wie das "Warum" in Features</p>
+      </div>
+    </div>
+    <div class="option" style="pointer-events:none;opacity:0.85;">
+      <div class="letter">→</div>
+      <div class="content">
+        <h3>Einbindung in App.jsx</h3>
+        <p>Zwischen <code>&lt;Features /&gt;</code> und <code>&lt;DownloadCTA /&gt;</code></p>
+      </div>
+    </div>
+  </div>
+</div>

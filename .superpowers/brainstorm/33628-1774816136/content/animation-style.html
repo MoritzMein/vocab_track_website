@@ -1,0 +1,117 @@
+<h2>Welcher Animations-Stil?</h2>
+<p class="subtitle">Alle drei sind Apple-typisch — der Unterschied ist subtil aber spürbar</p>
+
+<style>
+  .demo-box {
+    background: #FAF3E8;
+    border-radius: 12px;
+    padding: 32px 24px;
+    font-family: -apple-system, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 160px;
+    justify-content: center;
+  }
+  .demo-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+  .demo-text {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* A: pure fade */
+  .anim-a { animation: fadeOnly 1.2s ease forwards; }
+  @keyframes fadeOnly {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* B: fade + slide up */
+  .anim-b { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* C: fade + subtle scale */
+  .anim-c { animation: fadeScale 0.9s cubic-bezier(0.16,1,0.3,1) forwards; }
+  @keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .replay-btn {
+    background: none;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    color: #666;
+    margin-top: 4px;
+    align-self: flex-start;
+  }
+</style>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="overflow:hidden;">
+      <div class="demo-box" id="demo-a">
+        <div class="demo-title anim-a">Warum Vocab Track?</div>
+        <div class="demo-text anim-a" style="animation-delay:0.1s;opacity:0;">Klassenintern · KI-Features · Vokabeltest</div>
+      </div>
+      <button class="replay-btn" onclick="event.stopPropagation();replayAnim('a')">↺ nochmal</button>
+    </div>
+    <div class="card-body">
+      <h3>A — Nur Fade</h3>
+      <p>Sanft, ruhig, minimalst. Kaum wahrnehmbar — der Inhalt erscheint einfach.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="overflow:hidden;">
+      <div class="demo-box" id="demo-b">
+        <div class="demo-title anim-b" style="animation-delay:0.1s;opacity:0;">Warum Vocab Track?</div>
+        <div class="demo-text anim-b" style="animation-delay:0.25s;opacity:0;">Klassenintern · KI-Features · Vokabeltest</div>
+      </div>
+      <button class="replay-btn" onclick="event.stopPropagation();replayAnim('b')">↺ nochmal</button>
+    </div>
+    <div class="card-body">
+      <h3>B — Fade + Slide hoch ★</h3>
+      <p>Inhalte gleiten leicht von unten rein. Der Apple-Standard — fühlt sich poliert an ohne aufdringlich zu sein.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="overflow:hidden;">
+      <div class="demo-box" id="demo-c">
+        <div class="demo-title anim-c" style="animation-delay:0.1s;opacity:0;">Warum Vocab Track?</div>
+        <div class="demo-text anim-c" style="animation-delay:0.25s;opacity:0;">Klassenintern · KI-Features · Vokabeltest</div>
+      </div>
+      <button class="replay-btn" onclick="event.stopPropagation();replayAnim('c')">↺ nochmal</button>
+    </div>
+    <div class="card-body">
+      <h3>C — Fade + Scale</h3>
+      <p>Inhalte wachsen minimal rein. Etwas dramatischer — gut für Hero-Elemente, kann bei vielen Sektionen überwältigend wirken.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function replayAnim(id) {
+  const box = document.getElementById('demo-' + id);
+  const cls = 'anim-' + id;
+  box.querySelectorAll('.' + cls).forEach(el => {
+    el.style.animation = 'none';
+    el.offsetHeight; // reflow
+    el.style.animation = '';
+  });
+}
+</script>

@@ -1,0 +1,22 @@
+.download-cta {
+  display: flex;
+  justify-content: center;
+  padding: 40px 40px 80px;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 18px 32px;
+  border-radius: 999px;
+  transition: opacity 0.2s;
+}
+
+.download-button:hover {
+  opacity: 0.75;
+}

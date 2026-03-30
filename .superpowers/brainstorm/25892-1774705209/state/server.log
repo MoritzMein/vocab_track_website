@@ -1,0 +1,6 @@
+{"type":"server-started","port":64771,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:64771","screen_dir":"/Users/moritzmein/vocab_track_website/.superpowers/brainstorm/25892-1774705209/content","state_dir":"/Users/moritzmein/vocab_track_website/.superpowers/brainstorm/25892-1774705209/state"}
+{"type":"screen-added","file":"/Users/moritzmein/vocab_track_website/.superpowers/brainstorm/25892-1774705209/content/darstellung-optionen.html"}
+{"type":"screen-added","file":"/Users/moritzmein/vocab_track_website/.superpowers/brainstorm/25892-1774705209/content/icon-grid-mockup.html"}
+{"type":"screen-added","file":"/Users/moritzmein/vocab_track_website/.superpowers/brainstorm/25892-1774705209/content/sf-symbols-mockup.html"}
+{"source":"user-event","type":"click","text":"A\n      \n        SVG-Export aus SF Symbols App\n        Du öffnest die kostenlose SF Symbols App auf dem Mac, suchst die passenden Icons, exportierst als SVG — dann direkt in die Website einbinden. Keine externe Abhängigkeit.","choice":"export","id":null,"timestamp":1774706168551}
+{"type":"server-stopped","reason":"owner process exited"}

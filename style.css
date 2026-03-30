@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #FAF3E8;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 40px;
+}
+
+.nav-logo {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+main {
+    padding: 80px 60px;
+}
+
+h1 {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #1a1a1a;
+}
+
+.highlight {
+    background-color: #FF6800;
+    padding: 0 6px;
+    border-radius: 4px;
+}

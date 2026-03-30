@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 48px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.footer-brand {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.footer-right {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-right a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+  transition: color 0.15s;
+}
+
+.footer-right a:hover {
+  color: #1a1a1a;
+}

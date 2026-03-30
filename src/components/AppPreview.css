@@ -1,0 +1,11 @@
+.preview-wrapper {
+  padding: 0 40px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.preview-image {
+  width: 100%;
+  max-width: 1100px;
+  display: block;
+}
