@@ -1,6 +1,8 @@
 .hero {
   padding: 60px 48px 0;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Match Klack's massive headline */
@@ -81,4 +83,15 @@
   font-weight: 700;
   color: #1a1a1a;
   letter-spacing: -0.3px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 24px 0;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+    margin-bottom: 28px;
+  }
 }

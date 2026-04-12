@@ -20,3 +20,14 @@
 .download-button:hover {
   opacity: 0.75;
 }
+
+@media (max-width: 768px) {
+  .download-cta {
+    padding: 24px 20px 60px;
+  }
+
+  .download-button {
+    font-size: 15px;
+    padding: 16px 24px;
+  }
+}

@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import AppPreview from './components/AppPreview'
@@ -6,8 +7,9 @@ import Features from './components/Features'
 import Statement from './components/Statement'
 import DownloadCTA from './components/DownloadCTA'
 import Footer from './components/Footer'
+import Feedback from './components/Feedback'
 
-function App() {
+function HomePage() {
   useEffect(() => {
     const els = document.querySelectorAll('[data-reveal]')
     const observer = new IntersectionObserver(
@@ -26,12 +28,23 @@ function App() {
 
   return (
     <>
-      <Nav />
       <Hero />
       <AppPreview />
       <Features />
       <Statement />
       <DownloadCTA />
+    </>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/feedback" element={<Feedback />} />
+      </Routes>
       <Footer />
     </>
   )

@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
   background-color: #FAF3E8;
   color: #1a1a1a;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {

@@ -4,6 +4,12 @@
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .preview-wrapper {
+    padding: 0 16px 48px;
+  }
+}
+
 .preview-image {
   width: 100%;
   max-width: 1100px;
