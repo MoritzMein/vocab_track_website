@@ -1,0 +1,87 @@
+.konto-loeschen {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 80px 48px;
+}
+
+.konto-loeschen-inner {
+  max-width: 680px;
+  width: 100%;
+}
+
+.konto-loeschen-heading {
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: #1a1a1a;
+  margin-bottom: 32px;
+}
+
+.konto-loeschen-subheading {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 36px;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.konto-loeschen-sub {
+  font-size: 17px;
+  color: #1a1a1a;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.konto-loeschen-list,
+.konto-loeschen-bullets {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+  padding-left: 22px;
+}
+
+.konto-loeschen-list li,
+.konto-loeschen-bullets li {
+  margin-bottom: 8px;
+}
+
+.konto-loeschen-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+}
+
+.konto-loeschen-contact {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 15px;
+  color: #555;
+}
+
+.konto-loeschen-contact a {
+  color: #1a1a1a;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .konto-loeschen {
+    padding: 40px 24px;
+  }
+
+  .konto-loeschen-heading {
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+  }
+
+  .konto-loeschen-subheading {
+    font-size: 19px;
+    margin-top: 28px;
+  }
+}

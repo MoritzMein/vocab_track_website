@@ -8,6 +8,7 @@ import Statement from './components/Statement'
 import DownloadCTA from './components/DownloadCTA'
 import Footer from './components/Footer'
 import Feedback from './components/Feedback'
+import KontoLoeschen from './components/KontoLoeschen'
 
 function HomePage() {
   useEffect(() => {
@@ -44,6 +45,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/feedback" element={<Feedback />} />
+        <Route path="/konto-loeschen" element={<KontoLoeschen />} />
       </Routes>
       <Footer />
     </>
