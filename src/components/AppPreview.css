@@ -1,12 +1,12 @@
 .preview-wrapper {
-  padding: 0 40px 80px;
+  padding: 80px 40px;
   display: flex;
   justify-content: center;
 }
 
 @media (max-width: 768px) {
   .preview-wrapper {
-    padding: 0 16px 48px;
+    padding: 48px 16px;
   }
 }
 

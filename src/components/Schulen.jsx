@@ -37,13 +37,12 @@ export default function Schulen() {
   }
 
   return (
-    <div className="schulen" data-reveal>
+    <div className="schulen">
 
       {/* Hero */}
       <div className="schulen-hero">
-        <span className="schulen-label">Für Schulen</span>
         <h1 className="schulen-heading">
-          Vokabellernen neu gedacht —<br />für Ihre Schule.
+          Vokabellernen neu gedacht für <span className="schulen-highlight">Ihre Schule</span>
         </h1>
         <p className="schulen-sub">
           VocabTrack verbindet Lehrer und Schüler digital. Weniger Aufwand für Lehrkräfte, mehr Lernfortschritt für Schüler — und voller Überblick für die Schulleitung.
@@ -63,18 +62,22 @@ export default function Schulen() {
 
       {/* Problem */}
       <div className="schulen-section">
-        <div className="schulen-section-label">Das Problem</div>
         <h2 className="schulen-section-heading">
           Das alte System kann gar nicht funktionieren.
         </h2>
         <p className="schulen-section-text">
-          Schüler lernen keine Vokabeln — und Lehrkräfte haben nicht die Kapazität, dies jedes Mal zu kontrollieren. Klassische Vokabellisten gehen verloren, der Lernstand ist unsichtbar, und wertvolle Unterrichtszeit geht für Kontrolle drauf statt für Förderung.
+          Vokabeln sollen eigentlich regelmäßig gelernt werden – in der Realität passiert das aber kaum. Die meisten Schüler lernen nur dann, wenn ein Test angekündigt ist. Der Grund dafür ist einfach. Niemand kann nachvollziehen, ob sie zwischendurch üben. Für die Schüler macht es also keinen spürbaren Unterschied, ob sie die Vokabeln wirklich gelernt haben oder nicht.
+        </p>
+        <p className="schulen-section-text" style={{ marginTop: '16px' }}>
+          Lehrer stehen dabei vor einer schwierigen Situation. Jede Stunde einen Vokabeltest zu schreiben, nur um sicherzugehen, wäre extrem aufwändig, kostet wertvolle Unterrichtszeit und belastet das Verhältnis zwischen Lehrern und Schülern. Unangekündigte Tests sorgen für Misstrauen und das ständige Korrigieren hält Lehrkräfte von wichtigeren Aufgaben ab.
+        </p>
+        <p className="schulen-section-text" style={{ marginTop: '16px' }}>
+          Das Ergebnis ist immer dasselbe. Vokabeln werden kaum gelernt, Tests erzeugen Stress und am Ende ist niemand wirklich zufrieden.
         </p>
       </div>
 
       {/* Lösung */}
       <div className="schulen-section">
-        <div className="schulen-section-label">Die Lösung</div>
         <h2 className="schulen-section-heading">
           Was VocabTrack für Ihre Schule macht
         </h2>
@@ -93,7 +96,6 @@ export default function Schulen() {
 
       {/* Pilotphase */}
       <div className="schulen-pilot">
-        <div className="schulen-section-label">Pilotphase</div>
         <h2 className="schulen-section-heading">Jetzt kostenlos starten</h2>
         <p className="schulen-section-text">
           VocabTrack befindet sich aktuell in der Pilotphase und ist für Schulen vollständig kostenlos. Schulen, die jetzt einsteigen, gestalten die Weiterentwicklung aktiv mit und profitieren von direktem Support.
@@ -102,7 +104,6 @@ export default function Schulen() {
 
       {/* Kontaktformular */}
       <div className="schulen-section">
-        <div className="schulen-section-label">Kontakt</div>
         <h2 className="schulen-section-heading">Interesse? Schreiben Sie uns.</h2>
         <form className="schulen-form" onSubmit={handleSubmit}>
           <input

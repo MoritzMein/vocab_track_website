@@ -44,6 +44,27 @@
   gap: 8px;
 }
 
+.nav-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: background-color 0.15s;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 /* Outlined light button — matches Klack nav style */
 .nav-appstore {
   display: flex;
