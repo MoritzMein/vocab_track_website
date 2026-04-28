@@ -1,13 +1,22 @@
+import { Link } from 'react-router-dom'
 import './Nav.css'
 
 export default function Nav() {
   return (
     <nav className="nav">
       <div className="nav-left">
-        <div className="nav-icon">V</div>
-        <span className="nav-brand">VocabTrack</span>
+        <Link to="/" className="nav-brand-link">
+          <div className="nav-icon">V</div>
+          <span className="nav-brand">VocabTrack</span>
+        </Link>
       </div>
       <div className="nav-right">
+        <Link to="/schulen" className="nav-link">
+          Für Schulen
+        </Link>
+        <Link to="/konzept" className="nav-link">
+          Konzept
+        </Link>
         <a
           href="https://apps.apple.com"
           className="nav-appstore"
