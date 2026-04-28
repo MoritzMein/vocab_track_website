@@ -47,17 +47,6 @@ export default function Schulen() {
         <p className="schulen-sub">
           VocabTrack verbindet Lehrer und Schüler digital. Weniger Aufwand für Lehrkräfte, mehr Lernfortschritt für Schüler — und voller Überblick für die Schulleitung.
         </p>
-        <div className="schulen-badges">
-          <span className="schulen-badge">
-            <span className="schulen-badge-check">✓</span> DSGVO-konform
-          </span>
-          <span className="schulen-badge">
-            <span className="schulen-badge-check">✓</span> Kostenlos in der Pilotphase
-          </span>
-          <span className="schulen-badge">
-            <span className="schulen-badge-check">✓</span> Europäische Server
-          </span>
-        </div>
       </div>
 
       {/* Problem */}

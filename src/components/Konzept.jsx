@@ -17,7 +17,7 @@ const STEPS = [
   },
   {
     number: '03',
-    title: 'Fortschritt im Blick behalten',
+    title: 'Einsicht in das Lernverhalten',
     text:
       'Der Lehrer erhält eine detaillierte Einsicht in das Lernverhalten seiner Schüler — er sieht, wer aktiv lernt und wo es hakt, und kann gezielt nachhelfen, bevor der nächste Test kommt.',
     img: '/Mockup_schritt_3.png',
