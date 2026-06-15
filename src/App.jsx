@@ -11,6 +11,7 @@ import Feedback from './components/Feedback'
 import KontoLoeschen from './components/KontoLoeschen'
 import Konzept from './components/Konzept'
 import Schulen from './components/Schulen'
+import FAQ from './components/FAQ'
 
 function HomePage() {
   useEffect(() => {
@@ -35,6 +36,7 @@ function HomePage() {
       <AppPreview />
       <Features />
       <Statement />
+      <FAQ />
       <DownloadCTA />
     </>
   )
