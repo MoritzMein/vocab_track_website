@@ -1,0 +1,99 @@
+<h2>Design-Vorschau: Feature-Sektion + FAQ</h2>
+<p class="subtitle">So sehen die beiden neuen Sektionen auf der Seite aus. Scrollen für FAQ unten.</p>
+
+<div class="mockup">
+  <div class="mockup-header">Features-Sektion (ersetzt bestehende Features.jsx)</div>
+  <div class="mockup-body" style="background:#FAF3E8;padding:40px 32px;font-family:system-ui">
+
+    <div style="font-size:clamp(22px,4vw,36px);font-weight:800;color:#1a1a1a;letter-spacing:-1px;margin-bottom:32px">
+      Was macht VocabTrack <span style="background:linear-gradient(to bottom, transparent 45%, rgba(255,104,0,0.4) 45%);padding:0 4px">besonders?</span>
+    </div>
+
+    <!-- Tabs -->
+    <div style="display:flex;gap:8px;margin-bottom:28px">
+      <button style="padding:9px 20px;background:#1a1a1a;color:white;border:none;border-radius:24px;font-size:14px;font-weight:700;cursor:pointer">Für Schüler</button>
+      <button style="padding:9px 20px;background:#e8dfd0;color:#888;border:none;border-radius:24px;font-size:14px;font-weight:600;cursor:pointer">Für Lehrer</button>
+      <button style="padding:9px 20px;background:#e8dfd0;color:#888;border:none;border-radius:24px;font-size:14px;font-weight:600;cursor:pointer">Plattform</button>
+    </div>
+
+    <!-- Feature cards: Für Schüler -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <div style="background:white;border-radius:16px;padding:28px">
+        <div style="font-size:26px;margin-bottom:12px">🎯</div>
+        <div style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:6px">Tägliche Lektionen</div>
+        <div style="font-size:13px;color:#666;line-height:1.5">Mit Tippfehler-Toleranz — 1 Fehler zählt als „fast richtig"</div>
+      </div>
+      <div style="background:white;border-radius:16px;padding:28px">
+        <div style="font-size:26px;margin-bottom:12px">🔥</div>
+        <div style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:6px">Streak & Sofortfeedback</div>
+        <div style="font-size:13px;color:#666;line-height:1.5">Tägliche Motivation und direktes Feedback nach jeder Antwort</div>
+      </div>
+      <div style="background:white;border-radius:16px;padding:28px">
+        <div style="font-size:26px;margin-bottom:12px">🔔</div>
+        <div style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:6px">Push-Benachrichtigungen</div>
+        <div style="font-size:13px;color:#666;line-height:1.5">Automatische Erinnerung bei neuen Lektionen</div>
+      </div>
+      <div style="background:white;border-radius:16px;padding:28px">
+        <div style="font-size:26px;margin-bottom:12px">🎮</div>
+        <div style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:6px">Spiele</div>
+        <div style="font-size:13px;color:#666;line-height:1.5">Streak Star, 1v1-Duell, Block Blast, Tetris</div>
+      </div>
+      <div style="background:white;border-radius:16px;padding:28px">
+        <div style="font-size:26px;margin-bottom:12px">🎫</div>
+        <div style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:6px">Ticket-Währung</div>
+        <div style="font-size:13px;color:#666;line-height:1.5">Durch gute Leistungen verdient, für Premium-Spiele einlösen</div>
+      </div>
+      <div style="background:white;border-radius:16px;padding:28px">
+        <div style="font-size:26px;margin-bottom:12px">🏆</div>
+        <div style="font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:6px">Leaderboards</div>
+        <div style="font-size:13px;color:#666;line-height:1.5">Kurs-Ranglisten je Spiel</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;font-size:12px;color:#aaa;text-align:center">↑ Für Lehrer- und Plattform-Tab zeigen sich andere Karten</div>
+  </div>
+</div>
+
+<div class="mockup" style="margin-top:24px">
+  <div class="mockup-header">FAQ-Sektion (neue FAQ.jsx, nach Statement)</div>
+  <div class="mockup-body" style="background:#FAF3E8;padding:40px 32px;font-family:system-ui">
+
+    <div style="font-size:clamp(22px,4vw,36px);font-weight:800;color:#1a1a1a;letter-spacing:-1px;margin-bottom:40px">
+      Häufige Fragen
+    </div>
+
+    <!-- Accordion items -->
+    <div style="max-width:720px">
+
+      <div style="border-top:1.5px solid #e0d8cc;padding:20px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+        <span style="font-size:16px;font-weight:700;color:#1a1a1a">Wie funktioniert das Abo?</span>
+        <span style="color:#FF6800;font-size:20px;font-weight:700;flex-shrink:0;margin-top:1px">−</span>
+      </div>
+      <div style="padding:0 0 20px;font-size:15px;color:#666;line-height:1.6;border-bottom:1.5px solid #e0d8cc">
+        0,99 € pro Monat, jederzeit kündbar — direkt in der App über den App Store oder Google Play.
+      </div>
+
+      <div style="border-top:1.5px solid #e0d8cc;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px">
+        <span style="font-size:16px;font-weight:700;color:#1a1a1a">Kann ich die App ohne Lehrer nutzen?</span>
+        <span style="color:#aaa;font-size:20px;font-weight:700;flex-shrink:0">＋</span>
+      </div>
+
+      <div style="border-top:1.5px solid #e0d8cc;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px">
+        <span style="font-size:16px;font-weight:700;color:#1a1a1a">Wie registriere ich mich als Lehrer?</span>
+        <span style="color:#aaa;font-size:20px;font-weight:700;flex-shrink:0">＋</span>
+      </div>
+
+      <div style="border-top:1.5px solid #e0d8cc;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px">
+        <span style="font-size:16px;font-weight:700;color:#1a1a1a;opacity:0.5">… 4 weitere Fragen</span>
+        <span style="color:#aaa;font-size:20px;flex-shrink:0">＋</span>
+      </div>
+
+      <div style="border-top:1.5px solid #e0d8cc"></div>
+    </div>
+
+  </div>
+</div>
+
+<div style="margin-top:24px;padding:16px 20px;background:#f0e8d8;border-radius:12px">
+  <p style="font-size:13px;color:#666;margin:0"><strong style="color:#1a1a1a">Seitenreihenfolge:</strong> Hero → AppPreview → <strong>Features (Tabs)</strong> → Statement → <strong>FAQ</strong> → DownloadCTA</p>
+</div>

@@ -1,0 +1,6 @@
+{"type":"server-started","port":61982,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:61982","screen_dir":"/Users/moritzmein/vocab_track_website/.superpowers/brainstorm/70037-1781522193/content","state_dir":"/Users/moritzmein/vocab_track_website/.superpowers/brainstorm/70037-1781522193/state"}
+{"type":"screen-added","file":"/Users/moritzmein/vocab_track_website/.superpowers/brainstorm/70037-1781522193/content/feature-layout.html"}
+{"type":"screen-added","file":"/Users/moritzmein/vocab_track_website/.superpowers/brainstorm/70037-1781522193/content/faq-layout.html"}
+{"type":"screen-added","file":"/Users/moritzmein/vocab_track_website/.superpowers/brainstorm/70037-1781522193/content/waiting-1.html"}
+{"type":"screen-added","file":"/Users/moritzmein/vocab_track_website/.superpowers/brainstorm/70037-1781522193/content/design-preview.html"}
+{"type":"server-stopped","reason":"idle timeout"}

@@ -4,14 +4,14 @@
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .preview-wrapper {
-    padding: 48px 16px;
-  }
-}
-
 .preview-image {
   width: 100%;
   max-width: 1100px;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .preview-wrapper {
+    display: none;
+  }
 }

@@ -1,0 +1,91 @@
+<h2>Wie soll die Feature-Sektion strukturiert sein?</h2>
+<p class="subtitle">Du hast 3 Gruppen: Für Schüler (7 Features), Für Lehrer (4), Plattform (3) — wie soll das auf der Seite wirken?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#FAF3E8;padding:20px;border-radius:8px;font-family:system-ui">
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <div style="padding:6px 14px;background:#FF6800;color:white;border-radius:20px;font-size:12px;font-weight:700">Für Schüler</div>
+          <div style="padding:6px 14px;background:#e8dfd0;color:#888;border-radius:20px;font-size:12px;font-weight:700">Für Lehrer</div>
+          <div style="padding:6px 14px;background:#e8dfd0;color:#888;border-radius:20px;font-size:12px;font-weight:700">Plattform</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+          <div style="background:white;border-radius:10px;padding:12px;font-size:11px">
+            <div style="font-weight:700;margin-bottom:4px;color:#1a1a1a">🎯 Tägliche Lektionen</div>
+            <div style="color:#888;font-size:10px">Mit Tippfehler-Toleranz</div>
+          </div>
+          <div style="background:white;border-radius:10px;padding:12px;font-size:11px">
+            <div style="font-weight:700;margin-bottom:4px;color:#1a1a1a">🔥 Streak-System</div>
+            <div style="color:#888;font-size:10px">Tägliche Motivation</div>
+          </div>
+          <div style="background:white;border-radius:10px;padding:12px;font-size:11px">
+            <div style="font-weight:700;margin-bottom:4px;color:#1a1a1a">🎮 Spiele</div>
+            <div style="color:#888;font-size:10px">Duell, Tetris & mehr</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:10px;color:#aaa;font-size:10px">↑ Klick auf Tab zeigt andere Gruppe</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Tabs</h3>
+      <p>Drei Tabs oben, Klick wechselt die Feature-Gruppe. Kompakt und interaktiv, zeigt immer nur eine Gruppe.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#FAF3E8;padding:20px;border-radius:8px;font-family:system-ui">
+        <div style="margin-bottom:12px">
+          <div style="font-size:11px;font-weight:800;color:#FF6800;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Für Schüler</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px">
+            <div style="background:white;border-radius:8px;padding:10px;font-size:10px;font-weight:600;color:#1a1a1a">🎯 Lektionsabfragen</div>
+            <div style="background:white;border-radius:8px;padding:10px;font-size:10px;font-weight:600;color:#1a1a1a">🔥 Streaks</div>
+          </div>
+          <div style="font-size:11px;font-weight:800;color:#FF6800;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Für Lehrer</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px">
+            <div style="background:white;border-radius:8px;padding:10px;font-size:10px;font-weight:600;color:#1a1a1a">📚 Kurse erstellen</div>
+            <div style="background:white;border-radius:8px;padding:10px;font-size:10px;font-weight:600;color:#1a1a1a">🎓 Kostenlos</div>
+          </div>
+          <div style="font-size:11px;font-weight:800;color:#FF6800;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">Plattform</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
+            <div style="background:white;border-radius:8px;padding:10px;font-size:10px;font-weight:600;color:#1a1a1a">📱 iOS & Android</div>
+            <div style="background:white;border-radius:8px;padding:10px;font-size:10px;font-weight:600;color:#1a1a1a">0,99 €/Mon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Drei Gruppen übereinander</h3>
+      <p>Alle drei Gruppen als beschriftete Abschnitte untereinander. Kein Klick nötig — alles sofort sichtbar. Längere Seite, dafür vollständig.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#FAF3E8;padding:20px;border-radius:8px;font-family:system-ui">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+          <div style="background:#FF6800;border-radius:12px;padding:14px;color:white">
+            <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;opacity:0.8">Für Schüler</div>
+            <div style="font-size:10px;line-height:1.8">🎯 Lektionen<br/>🔥 Streaks<br/>🎮 Spiele<br/>🎫 Tickets</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="background:#e8dfd0;border-radius:10px;padding:12px;flex:1">
+              <div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#FF6800;margin-bottom:6px">Für Lehrer</div>
+              <div style="font-size:10px;color:#555;line-height:1.8">📚 Kurse<br/>👥 Einladungscode</div>
+            </div>
+            <div style="background:white;border-radius:10px;padding:10px">
+              <div style="font-size:10px;font-weight:700;color:#1a1a1a">📱 iOS & Android · 0,99 €/Mon</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Bento-Grid</h3>
+      <p>Schüler-Features groß und orange hervorgehoben, Lehrer und Plattform kleiner daneben. Editorial, modernes App-Website-Gefühl.</p>
+    </div>
+  </div>
+
+</div>

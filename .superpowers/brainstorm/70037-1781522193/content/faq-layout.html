@@ -1,0 +1,67 @@
+<h2>Wie soll die FAQ-Sektion aussehen?</h2>
+<p class="subtitle">7 Fragen — welches Layout passt besser zur Seite?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#FAF3E8;padding:20px;border-radius:8px;font-family:system-ui">
+        <div style="font-size:13px;font-weight:800;color:#1a1a1a;margin-bottom:12px">Häufige Fragen</div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="border-top:1px solid #e0d8cc;padding:10px 0;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;font-weight:600;color:#1a1a1a">Wie funktioniert das Abo?</span>
+            <span style="color:#FF6800;font-size:14px;font-weight:700">＋</span>
+          </div>
+          <div style="background:white;padding:10px 12px;border-radius:0 0 8px 8px;margin-bottom:4px">
+            <span style="font-size:10px;color:#666">0,99 € / Monat, jederzeit kündbar, direkt in der App.</span>
+          </div>
+          <div style="border-top:1px solid #e0d8cc;padding:10px 0;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;font-weight:600;color:#1a1a1a">Kann ich die App ohne Lehrer nutzen?</span>
+            <span style="color:#999;font-size:14px;font-weight:700">＋</span>
+          </div>
+          <div style="border-top:1px solid #e0d8cc;padding:10px 0;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;font-weight:600;color:#1a1a1a">Was sind Tickets?</span>
+            <span style="color:#999;font-size:14px;font-weight:700">＋</span>
+          </div>
+          <div style="border-top:1px solid #e0d8cc;padding:10px 0;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;font-weight:600;color:#1a1a1a;opacity:0.5">… 4 weitere</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Accordion</h3>
+      <p>Fragen aufgelistet, Klick auf eine Frage klappt die Antwort auf. Kompakt, klassisch, mobile-freundlich.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#FAF3E8;padding:20px;border-radius:8px;font-family:system-ui">
+        <div style="font-size:13px;font-weight:800;color:#1a1a1a;margin-bottom:12px">Häufige Fragen</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div style="background:white;border-radius:10px;padding:12px">
+            <div style="font-size:11px;font-weight:700;color:#1a1a1a;margin-bottom:4px">Wie funktioniert das Abo?</div>
+            <div style="font-size:10px;color:#666;line-height:1.5">0,99 € / Monat, jederzeit kündbar, direkt in der App.</div>
+          </div>
+          <div style="background:white;border-radius:10px;padding:12px">
+            <div style="font-size:11px;font-weight:700;color:#1a1a1a;margin-bottom:4px">Kann ich ohne Lehrer nutzen?</div>
+            <div style="font-size:10px;color:#666;line-height:1.5">Nein, du brauchst einen Kurs von deinem Lehrer.</div>
+          </div>
+          <div style="background:white;border-radius:10px;padding:12px">
+            <div style="font-size:11px;font-weight:700;color:#1a1a1a;margin-bottom:4px">Was sind Tickets?</div>
+            <div style="font-size:10px;color:#666;line-height:1.5">Belohnungswährung für Premium-Spiele.</div>
+          </div>
+          <div style="background:#e8dfd0;border-radius:10px;padding:12px;display:flex;align-items:center;justify-content:center">
+            <span style="font-size:10px;color:#999">… 4 weitere</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Karten-Grid</h3>
+      <p>Alle Fragen + Antworten als Karten in einem 2-Spalten-Grid. Alles sofort sichtbar, kein Klick nötig.</p>
+    </div>
+  </div>
+
+</div>
