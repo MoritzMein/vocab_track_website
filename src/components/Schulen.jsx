@@ -45,7 +45,7 @@ export default function Schulen() {
           Vokabellernen neu gedacht für <span className="schulen-highlight">Ihre Schule</span>
         </h1>
         <p className="schulen-sub">
-          VocabTrack verbindet Lehrer und Schüler digital. Weniger Aufwand für Lehrkräfte, mehr Lernfortschritt für Schüler — und voller Überblick für die Schulleitung.
+          VocabTrack verbindet Lehrer und Schüler digital. Weniger Aufwand für Lehrkräfte, mehr Lernfortschritt für Schüler — und voller Überblick für die Kursleitung.
         </p>
       </div>
 
