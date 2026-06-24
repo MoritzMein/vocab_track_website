@@ -1,18 +1,32 @@
 .hero {
-  padding: 60px 48px 0;
-  text-align: center;
+  padding: 80px 48px 0;
   width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* Match Klack's massive headline */
+.hero-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .hero h1 {
-  font-size: clamp(50px, 6.5vw, 88px);
+  font-size: clamp(46px, 6vw, 80px);
   font-weight: 700;
   line-height: 1.0;
-  letter-spacing: -4px;
+  letter-spacing: -3px;
   color: #1a1a1a;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .highlight {
@@ -23,13 +37,20 @@
   font-weight: 800;
 }
 
-/* CTA row — matches Klack: big dark button + subtle badges */
+.hero-sub {
+  font-size: clamp(16px, 1.8vw, 19px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 36px;
+  max-width: 440px;
+}
+
 .hero-cta {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 36px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
 }
 
 .cta-button {
@@ -50,48 +71,78 @@
   opacity: 0.78;
 }
 
-/* Subtle "Featured on App Store" badge — matches Klack's laurel badge */
-.badges {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  opacity: 0.45;
-}
-
-.badge-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.badge-top {
-  font-size: 10px;
+.hero-platforms {
+  font-size: 13px;
+  color: #888;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  color: #666;
+  letter-spacing: -0.1px;
 }
 
-.badge-name {
-  font-size: 15px;
-  font-weight: 700;
-  color: #1a1a1a;
-  letter-spacing: -0.3px;
+.hero-visual {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: -48px;
 }
 
-@media (max-width: 768px) {
+.hero-screenshot {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+}
+
+@media (max-width: 960px) {
   .hero {
-    padding: 40px 24px 0;
+    padding: 60px 24px 0;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .hero-text {
+    align-items: center;
+  }
+
+  .hero-sub {
+    max-width: 560px;
+  }
+
+  .hero-cta {
+    align-items: center;
   }
 
   .hero h1 {
     letter-spacing: -2px;
-    margin-bottom: 28px;
+  }
+
+  .hero-visual {
+    justify-content: center;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px 0;
+  }
+
+  .hero h1 {
+    letter-spacing: -1.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .cta-button {
+    width: 100%;
+    justify-content: center;
   }
 }

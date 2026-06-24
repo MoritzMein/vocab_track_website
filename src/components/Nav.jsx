@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Nav.css'
 
 export default function Nav() {
+  const [open, setOpen] = useState(false)
+
   return (
     <nav className="nav">
       <div className="nav-left">
-        <Link to="/" className="nav-brand-link">
+        <Link to="/" className="nav-brand-link" onClick={() => setOpen(false)}>
           <div className="nav-icon">V</div>
           <span className="nav-brand">VocabTrack</span>
         </Link>
@@ -14,11 +17,8 @@ export default function Nav() {
         <Link to="/schulen" className="nav-link">
           Für Schulen
         </Link>
-        <Link to="/konzept" className="nav-link">
-          Konzept
-        </Link>
         <a
-          href="https://apps.apple.com"
+          href="https://apps.apple.com/de/app/vocab-track/id6753958684"
           className="nav-appstore"
           target="_blank"
           rel="noopener noreferrer"
@@ -26,8 +26,49 @@ export default function Nav() {
           <AppleIcon />
           App Store
         </a>
+        <button
+          className={`nav-hamburger${open ? ' nav-hamburger--open' : ''}`}
+          onClick={() => setOpen(o => !o)}
+          aria-label="Menü öffnen"
+        >
+          {open ? <CloseIcon /> : <HamburgerIcon />}
+        </button>
+      </div>
+
+      <div className={`nav-mobile-menu${open ? ' nav-mobile-menu--open' : ''}`}>
+        <Link to="/schulen" className="nav-mobile-link" onClick={() => setOpen(false)}>
+          Für Schulen
+        </Link>
+        <a
+          href="https://apps.apple.com/de/app/vocab-track/id6753958684"
+          className="nav-mobile-appstore"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setOpen(false)}
+        >
+          <AppleIcon />
+          Im App Store laden
+        </a>
       </div>
     </nav>
+  )
+}
+
+function HamburgerIcon() {
+  return (
+    <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
+      <rect y="0" width="20" height="2" rx="1" fill="currentColor"/>
+      <rect y="6" width="20" height="2" rx="1" fill="currentColor"/>
+      <rect y="12" width="20" height="2" rx="1" fill="currentColor"/>
+    </svg>
+  )
+}
+
+function CloseIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M1 1L15 15M15 1L1 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
   )
 }
 
