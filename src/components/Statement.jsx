@@ -34,13 +34,13 @@ export default function Statement() {
         </h2>
 
         <p className="statement-body">
-          Schüler lernen keine Vokabeln — und Lehrer haben nicht die Kapazität,
-          jedes Mal zu kontrollieren. Soll jede Stunde ein Vokabeltest
-          geschrieben werden? Nein. Das kostet Zeit und schädigt das Verhältnis.
+          Schüler lernen keine Vokabeln — und Lehrer haben keine Zeit, das
+          jede Woche nachzuprüfen. Soll jede Stunde ein Vokabeltest
+          geschrieben werden? Nein. Das kostet Zeit und belastet die Beziehung.
         </p>
 
         <p className="statement-quote">
-          „Vokabeln sind nicht nur Wörter im Schulbuch — sondern der Baustein
+          „Vokabeln sind nicht nur Wörter im Schulbuch — sondern die Bausteine
           für Beziehungen weit über das eigene Land hinaus."
         </p>
       </div>

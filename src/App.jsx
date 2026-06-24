@@ -2,16 +2,19 @@ import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import AppPreview from './components/AppPreview'
-import Features from './components/Features'
-import Statement from './components/Statement'
+import Problem from './components/Problem'
+import HowItWorks from './components/HowItWorks'
+import StudentView from './components/StudentView'
+import TeacherView from './components/TeacherView'
+import VokabelTest from './components/VokabelTest'
+import VokabelTestTeaser from './components/VokabelTestTeaser'
+import FAQ from './components/FAQ'
 import DownloadCTA from './components/DownloadCTA'
 import Footer from './components/Footer'
 import Feedback from './components/Feedback'
 import KontoLoeschen from './components/KontoLoeschen'
-import Konzept from './components/Konzept'
 import Schulen from './components/Schulen'
-import FAQ from './components/FAQ'
+import SchuelerPage from './components/SchuelerPage'
 
 function HomePage() {
   useEffect(() => {
@@ -33,9 +36,11 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <AppPreview />
-      <Features />
-      <Statement />
+      <Problem />
+      <HowItWorks />
+      <StudentView />
+      <TeacherView />
+      <VokabelTestTeaser />
       <FAQ />
       <DownloadCTA />
     </>
@@ -50,8 +55,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/konto-loeschen" element={<KontoLoeschen />} />
-        <Route path="/konzept" element={<Konzept />} />
         <Route path="/schulen" element={<Schulen />} />
+        <Route path="/schueler" element={<SchuelerPage />} />
+        <Route path="/vokabeltest" element={<VokabelTest />} />
       </Routes>
       <Footer />
     </>

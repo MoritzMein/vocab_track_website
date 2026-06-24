@@ -12,11 +12,11 @@ const FAQS = [
   },
   {
     q: 'Wie bekomme ich einen Einladungscode?',
-    a: 'Von deinem Lehrer — er teilt ihn mit der Klasse, z. B. per Elternbrief oder im Unterricht.',
+    a: 'Von deiner Lehrkraft — sie teilt ihn mit der Klasse, z. B. per Elternbrief oder im Unterricht.',
   },
   {
     q: 'Wie registriere ich mich als Lehrer?',
-    a: 'Bei der Registrierung „Ich bin Lehrer" auswählen. Lehrer zahlen nichts.',
+    a: 'Den Zugangscode erhältst du von deiner Schulleitung. Bei der Registrierung dann einfach „Ich bin Lehrer" auswählen. Lehrer zahlen nichts.',
   },
   {
     q: 'Welche Fächer werden unterstützt?',

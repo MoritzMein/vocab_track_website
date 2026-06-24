@@ -4,7 +4,7 @@ export default function DownloadCTA() {
   return (
     <section className="download-cta" data-reveal>
       <a
-        href="https://apps.apple.com"
+        href="https://apps.apple.com/de/app/vocab-track/id6753958684"
         className="download-button"
         target="_blank"
         rel="noopener noreferrer"

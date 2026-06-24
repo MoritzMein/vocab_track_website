@@ -49,7 +49,7 @@ const FEATURES = {
     {
       emoji: '📚',
       title: 'Kurse erstellen',
-      desc: 'Vokabellisten einpflegen, tägliche Lektionen planen',
+      desc: 'Vokabellisten anlegen, tägliche Lektionen planen',
     },
     {
       emoji: '👥',
