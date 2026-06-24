@@ -128,11 +128,15 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 60px 20px 0;
+    padding: 60px 20px 60px;
   }
 
   .hero h1 {
     letter-spacing: -1.5px;
+  }
+
+  .hero-visual {
+    display: none;
   }
 }
 
