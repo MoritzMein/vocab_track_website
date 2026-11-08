@@ -1,0 +1,345 @@
+.home {
+  overflow-x: clip;
+  /* Luft zwischen letztem Abschnitt und Footer */
+  padding-bottom: 96px;
+  display: flex;
+  flex-direction: column;
+  /* Sprachleiste etwas oberhalb des Bildschirmrands */
+  min-height: calc(100vh - 176px);
+}
+
+/* Hero: Text zentriert oben, iPhone mittig darunter */
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  flex: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 48px 72px;
+  text-align: center;
+}
+
+.home-hero .home-cta {
+  align-items: center;
+}
+
+.home-hero .home-cta-buttons {
+  justify-content: center;
+}
+
+/* iPhone-Bühne: nimmt im Layout genau den Platz des iPhones ein.
+   Die Bausteine-Ebene (1000 × 430) liegt frei dahinter und ändert das Layout nicht:
+   iPhone = 198 Einheiten breit, Ebene beginnt 102 Einheiten über dem iPhone */
+.home-stage {
+  --phone: 300px;
+  position: relative;
+  flex: none;
+}
+
+.home-stage-bausteine {
+  position: absolute;
+  top: calc(var(--phone) * -102 / 198);
+  left: 50%;
+  width: calc(var(--phone) * 1000 / 198);
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* iPhone: Rahmen liegt über dem Screenshot */
+.home-phone {
+  position: relative;
+  z-index: 1;
+  width: var(--phone);
+  aspect-ratio: 978 / 2000;
+  filter:
+    drop-shadow(0 18px 24px rgba(80, 50, 20, 0.14))
+    drop-shadow(0 48px 60px rgba(80, 50, 20, 0.16));
+}
+
+.home-phone-screen {
+  position: absolute;
+  left: 5.3%;
+  top: 2.5%;
+  width: 89.4%;
+  height: 95%;
+  border-radius: 15% / 7%;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.home-phone-screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-phone-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.home-brand {
+  font-size: clamp(36px, 4vw, 60px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -3px;
+  color: #0a0a0a;
+  margin-bottom: 8px;
+}
+
+/* Textmarker wie auf der Schulen-Seite */
+.home-brand span {
+  background: linear-gradient(to bottom, transparent 45%, rgba(255, 104, 0, 0.4) 45%);
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+.home-hero-content h1 {
+  font-size: clamp(36px, 4vw, 60px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -3px;
+  color: #0a0a0a;
+  margin-bottom: 40px;
+}
+
+/* Jede Hälfte der Aussage bleibt in einer Zeile */
+.home-hero-content h1 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.home-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.home-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Optioncard aus der App: weiße Karte, grauer Rand, dickere Unterkante */
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  color: #0a0a0a;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  padding: 16px 28px;
+  border: 2px solid #e3e3e3;
+  border-radius: 20px;
+  box-shadow: 0 4px 0 #e3e3e3;
+  transition: background-color 0.15s, transform 0.1s, box-shadow 0.1s;
+}
+
+.home-button:hover {
+  background-color: #fafafa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #e3e3e3;
+}
+
+.home-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #e3e3e3;
+}
+
+.home-cta-note {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+  color: #6e6e73;
+}
+
+/* Sprachleiste am unteren Rand des ersten Bildschirms */
+.home-languages {
+  border-top: 2px solid #ece4d6;
+  border-bottom: 2px solid #ece4d6;
+  padding: 24px 20px;
+}
+
+.home-languages ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 18px;
+  list-style: none;
+}
+
+/* Sprach-Pille: weiß, Rand innen, feste Kante unten */
+.home-language {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  padding: 8px 18px 8px 8px;
+  border-radius: 999px;
+  background-color: #fff;
+  box-shadow: inset 0 0 0 1.5px #e4e2de, 0 4px 0 #e4e2de;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6f6a64;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-language:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 0 0 1.5px #e4e2de, 0 6px 0 #e4e2de;
+}
+
+.home-language img {
+  width: 30px;
+  height: 30px;
+  flex: none;
+}
+
+/* Latein: Icon ohne runden Rahmen, braucht mehr Luft */
+.home-language--wide {
+  padding: 8px 26px 8px 16px;
+}
+
+/* Feature-Abschnitte: Text und Bild nebeneinander */
+.home-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 48px;
+}
+
+.home-feature--reverse .home-feature-text {
+  order: 2;
+}
+
+.home-feature-text h2 {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: #0a0a0a;
+  margin-bottom: 24px;
+}
+
+.home-feature-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #6e6e73;
+  max-width: 480px;
+}
+
+.home-feature-image {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 560 / 480;
+  justify-self: center;
+}
+
+.home-feature-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #e4e2de;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #a1a1a6;
+}
+
+@media (max-width: 768px) {
+  .home-feature {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 64px 20px;
+    text-align: center;
+  }
+
+  .home-feature--reverse .home-feature-text {
+    order: 0;
+  }
+
+  .home-feature-text h2 {
+    letter-spacing: -1px;
+  }
+
+  .home-feature-text p {
+    margin: 0 auto;
+  }
+
+  .home-hero {
+    gap: 48px;
+    padding: 32px 20px 48px;
+  }
+
+  /* iPhone wie vorher 240px, die Ebene wächst mit */
+  .home-stage {
+    --phone: 240px;
+  }
+
+  .home-brand,
+  .home-hero-content h1 {
+    letter-spacing: -1.5px;
+    margin-bottom: 32px;
+  }
+
+  .home-cta,
+  .home-cta-buttons {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-hero-content h1 span {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-languages ul {
+    gap: 10px;
+  }
+
+  .home-language {
+    font-size: 12px;
+    gap: 7px;
+    padding: 6px 13px 6px 6px;
+  }
+
+  .home-language img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-language--wide {
+    padding: 6px 19px 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

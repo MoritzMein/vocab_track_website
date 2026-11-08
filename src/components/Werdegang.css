@@ -1,0 +1,212 @@
+.werdegang {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 112px 48px 128px;
+}
+
+.werdegang-header {
+  max-width: 720px;
+  margin: 0 auto 72px;
+  text-align: center;
+}
+
+/* Textmarker wie im Hero */
+.werdegang-brand {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #0a0a0a;
+  margin-bottom: 16px;
+}
+
+.werdegang-brand span {
+  background: linear-gradient(to bottom, transparent 45%, rgba(255, 104, 0, 0.4) 45%);
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+.werdegang-header h1 {
+  font-size: clamp(36px, 4vw, 60px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: #0a0a0a;
+}
+
+/* Zeitleiste: Linie links, Punkt pro Station, Karte daneben */
+.werdegang-timeline {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.werdegang-timeline::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 11px;
+  width: 2px;
+  background-color: #ece4d6;
+}
+
+.werdegang-station {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.werdegang-dot {
+  position: relative;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin-top: 28px;
+  border-radius: 50%;
+  background-color: #F39443;
+  box-shadow: 0 0 0 6px #FAF3E8;
+}
+
+/* Optioncard: weiß, grauer Rand, dickere Unterkante */
+.werdegang-card {
+  flex: 1;
+  padding: 24px 28px;
+  background-color: #fff;
+  border: 2px solid #e3e3e3;
+  border-radius: 20px;
+  box-shadow: 0 4px 0 #e3e3e3;
+}
+
+/* Karte hebt sich beim Drüberfahren leicht an */
+.werdegang-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.werdegang-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 0 #e3e3e3;
+}
+
+.werdegang-date {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #D4772A;
+  margin-bottom: 8px;
+}
+
+.werdegang-card h2 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #0a0a0a;
+  margin-bottom: 8px;
+}
+
+.werdegang-card h2 + p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #6e6e73;
+}
+
+/* Zukunft: Punkt nur als Ring, Karte gestrichelt */
+.werdegang-station--future .werdegang-dot {
+  background-color: #FAF3E8;
+  border: 3px dashed #F39443;
+}
+
+.werdegang-station--future .werdegang-card,
+.werdegang-station--future .werdegang-card:hover {
+  border-style: dashed;
+  box-shadow: none;
+}
+
+/* Karte mit Illustration: Text links bestimmt die Höhe, Bild rechts füllt genau diese Höhe */
+.werdegang-card--image {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 8px;
+}
+
+.werdegang-card--image img {
+  display: block;
+  width: calc(100% + 28px);
+  height: 0;
+  min-height: 100%;
+  margin-right: -28px;
+  object-fit: contain;
+}
+
+/* Button im Stil der Store-Buttons */
+.werdegang-button {
+  display: inline-flex;
+  margin-top: 20px;
+  padding: 14px 24px;
+  background-color: #fff;
+  color: #0a0a0a;
+  font-size: 16px;
+  font-weight: 700;
+  border: 2px solid #e3e3e3;
+  border-radius: 20px;
+  box-shadow: 0 4px 0 #e3e3e3;
+  transition: background-color 0.15s, transform 0.1s, box-shadow 0.1s;
+}
+
+.werdegang-button:hover {
+  background-color: #fafafa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #e3e3e3;
+}
+
+.werdegang-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #e3e3e3;
+}
+
+@media (max-width: 768px) {
+  .werdegang {
+    padding: 56px 20px 80px;
+  }
+
+  .werdegang-header {
+    margin-bottom: 48px;
+  }
+
+  .werdegang-header h1 {
+    letter-spacing: -1px;
+  }
+
+  .werdegang-station {
+    gap: 16px;
+  }
+
+  .werdegang-card {
+    padding: 20px;
+  }
+
+  .werdegang-card h2 {
+    font-size: 20px;
+  }
+
+  .werdegang-card--image {
+    grid-template-columns: 1fr;
+  }
+
+  .werdegang-card--image img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-right: 0;
+  }
+
+
+  .werdegang-card h2 + p {
+    font-size: 16px;
+  }
+}

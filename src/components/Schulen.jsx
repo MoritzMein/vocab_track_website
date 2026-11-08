@@ -1,99 +1,78 @@
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { useForm, ValidationError } from '@formspree/react'
 import './Schulen.css'
 
 const LOESUNG_CARDS = [
   {
-    icon: '⏱',
+    icon: '/icons/icon-zeit.svg',
     title: 'Lehrer sparen wertvolle Zeit',
-    text: 'Vokabellisten in Sekunden per KI generieren oder Schulbuch-Seiten einscannen — kein manuelles Abtippen, keine verlorenen Zettel.',
   },
   {
-    icon: '📊',
+    icon: '/icons/icon-einblick.svg',
     title: 'Voller Einblick in das Lernverhalten',
-    text: 'Lehrer sehen auf einen Blick, wer aktiv lernt und wer hinterherhinkt — und können gezielt fördern, bevor der nächste Test kommt.',
   },
   {
-    icon: '🔒',
-    title: 'DSGVO-konform & sicher',
-    text: 'Alle Daten werden auf europäischen Servern gespeichert. Datenschutz ist kein Nachgedanke, sondern Grundlage.',
+    icon: '/icons/icon-sicher.svg',
+    title: 'DSGVO-konform &\nsicher',
   },
 ]
 
 export default function Schulen() {
   const [state, handleSubmit] = useForm('mqegrpgg')
+  const { hash } = useLocation()
+
+  // Mit #anfrage direkt zum Formular springen
+  useEffect(() => {
+    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView()
+  }, [hash])
 
   if (state.succeeded) {
     return (
-      <div className="schulen">
-        <div className="schulen-success">
-          <h1 className="schulen-success-heading">Vielen Dank!</h1>
-          <p className="schulen-success-text">
+      <main className="schulen page-enter">
+        <div className="schulen-header">
+          <p className="schulen-brand"><span>Antrag stellen</span></p>
+          <h1>Vielen Dank!</h1>
+          <p className="schulen-intro">
             Ihre Anfrage ist eingegangen. Wir melden uns schnellstmöglich bei Ihnen.
           </p>
-          <a href="/" className="schulen-back">Zurück zur Startseite</a>
+          <Link to="/" className="schulen-button">Zurück zur Startseite</Link>
         </div>
-      </div>
+      </main>
     )
   }
 
   return (
-    <div className="schulen">
-
-      {/* Hero */}
-      <div className="schulen-hero">
-        <h1 className="schulen-heading">
-          Vokabellernen neu gedacht für <span className="schulen-highlight">Ihre Schule</span>
-        </h1>
-        <p className="schulen-sub">
+    <main className="schulen page-enter">
+      <header className="schulen-header">
+        <p className="schulen-brand"><span>Antrag stellen</span></p>
+        <h1>Vokabellernen neu gedacht für Ihre Schule</h1>
+        <p className="schulen-intro">
           VocabTrack verbindet Lehrer und Schüler digital. Weniger Aufwand für Lehrkräfte, mehr Lernfortschritt für Schüler — und voller Überblick für die Kursleitung.
         </p>
-      </div>
+      </header>
 
-      {/* Problem */}
-      <div className="schulen-section">
-        <h2 className="schulen-section-heading">
-          Das alte System kann gar nicht funktionieren.
-        </h2>
-        <p className="schulen-section-text">
-          Vokabeln sollen eigentlich regelmäßig gelernt werden – in der Realität passiert das aber kaum. Die meisten Schüler lernen nur dann, wenn ein Test angekündigt ist. Der Grund dafür ist einfach. Niemand kann nachvollziehen, ob sie zwischendurch üben. Für die Schüler macht es also keinen spürbaren Unterschied, ob sie die Vokabeln wirklich gelernt haben oder nicht.
-        </p>
-        <p className="schulen-section-text" style={{ marginTop: '16px' }}>
-          Lehrer stehen dabei vor einer schwierigen Situation. Jede Stunde einen Vokabeltest zu schreiben, nur um sicherzugehen, wäre extrem aufwändig, kostet wertvolle Unterrichtszeit und belastet das Verhältnis zwischen Lehrern und Schülern. Unangekündigte Tests sorgen für Misstrauen und das ständige Korrigieren hält Lehrkräfte von wichtigeren Aufgaben ab.
-        </p>
-        <p className="schulen-section-text" style={{ marginTop: '16px' }}>
-          Das Ergebnis ist immer dasselbe. Vokabeln werden kaum gelernt, Tests erzeugen Stress und am Ende ist niemand wirklich zufrieden.
-        </p>
-      </div>
-
-      {/* Lösung */}
-      <div className="schulen-section">
-        <h2 className="schulen-section-heading">
-          Was VocabTrack für Ihre Schule macht
-        </h2>
-        <div className="schulen-cards">
-          {LOESUNG_CARDS.map((card) => (
-            <div key={card.title} className="schulen-card">
-              <div className="schulen-card-icon">{card.icon}</div>
-              <div>
-                <div className="schulen-card-title">{card.title}</div>
-                <div className="schulen-card-text">{card.text}</div>
-              </div>
-            </div>
+      <section className="schulen-section">
+        <h2>Was VocabTrack für Ihre Schule macht</h2>
+        <ul className="schulen-cards">
+          {LOESUNG_CARDS.map(card => (
+            <li key={card.title} className="schulen-card">
+              <img src={card.icon} alt="" width="64" height="64" className="schulen-card-icon" />
+              <h3>{card.title}</h3>
+            </li>
           ))}
-        </div>
-      </div>
+        </ul>
+      </section>
 
-      {/* Pilotphase */}
-      <div className="schulen-pilot">
-        <h2 className="schulen-section-heading">Jetzt kostenlos starten</h2>
-        <p className="schulen-section-text">
-          VocabTrack befindet sich aktuell in der Pilotphase und ist für Schulen vollständig kostenlos. Schulen, die jetzt einsteigen, gestalten die Weiterentwicklung aktiv mit und profitieren von direktem Support.
+      <section className="schulen-section schulen-pilot">
+        <h2>Zwei Monate kostenlos testen</h2>
+        <p>
+          Wir kommen an Ihre Schule und erklären VocabTrack in Ruhe. Danach testen Sie die App zwei Monate lang kostenlos in einigen Kursen. Erst dann entscheiden Sie, ob Sie VocabTrack weiter nutzen möchten.
         </p>
-      </div>
+      </section>
 
-      {/* Kontaktformular */}
-      <div className="schulen-section">
-        <h2 className="schulen-section-heading">Interesse? Schreiben Sie uns.</h2>
+      <section className="schulen-section" id="anfrage">
+        <h2>Interesse? Schreiben Sie uns.</h2>
         <form className="schulen-form" onSubmit={handleSubmit}>
           <input
             className="schulen-input"
@@ -123,7 +102,7 @@ export default function Schulen() {
           <ValidationError field="email" errors={state.errors} />
 
           <textarea
-            className="schulen-textarea"
+            className="schulen-input schulen-textarea"
             name="nachricht"
             placeholder="Nachricht (optional)"
             rows="4"
@@ -132,14 +111,13 @@ export default function Schulen() {
 
           <button
             type="submit"
-            className="schulen-submit"
+            className="schulen-button schulen-submit"
             disabled={state.submitting}
           >
             {state.submitting ? 'Wird gesendet...' : 'Anfrage senden'}
           </button>
         </form>
-      </div>
-
-    </div>
+      </section>
+    </main>
   )
 }

@@ -1,0 +1,299 @@
+.pilot {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 112px 20px 128px;
+}
+
+.pilot-header {
+  max-width: 720px;
+  margin: 0 auto 96px;
+  text-align: center;
+}
+
+/* Textmarker wie im Hero und auf der Werdegang-Seite */
+.pilot-brand {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #0a0a0a;
+  margin-bottom: 16px;
+}
+
+.pilot-brand span {
+  background: linear-gradient(to bottom, transparent 45%, rgba(255, 104, 0, 0.4) 45%);
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+.pilot-header h1 {
+  font-size: clamp(36px, 4vw, 60px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: #0a0a0a;
+  margin-bottom: 24px;
+}
+
+.pilot-intro {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #6e6e73;
+}
+
+/* Themenblock: Überschrift, Erklärung, zwei Kennzahlen */
+.pilot-theme {
+  margin-bottom: 96px;
+}
+
+/* Eine Größe für alle Section-Überschriften */
+.pilot-theme h2,
+.pilot-section h2 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  color: #0a0a0a;
+  margin-bottom: 16px;
+}
+
+/* Zweizeilige Überschrift */
+.pilot-theme-title--big > span {
+  display: block;
+}
+
+/* Wort mit orangem Unterstrich */
+.pilot-underline {
+  position: relative;
+  white-space: nowrap;
+}
+
+.pilot-swoosh {
+  position: absolute;
+  left: 0;
+  bottom: -0.18em;
+  width: 100%;
+  height: 0.28em;
+  color: #F39443;
+}
+
+.pilot-theme-text {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #6e6e73;
+  margin-bottom: 24px;
+}
+
+/* Kennzahlen als Optioncards */
+.pilot-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  list-style: none;
+}
+
+.pilot-stats--four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.pilot-stat,
+.pilot-section {
+  background-color: #fff;
+  border: 2px solid #e3e3e3;
+  border-radius: 20px;
+  box-shadow: 0 4px 0 #e3e3e3;
+}
+
+/* Karten heben sich beim Drüberfahren leicht an */
+.pilot-stat,
+.pilot-section,
+.pilot-bubble {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pilot-stat:hover,
+.pilot-section:hover,
+.pilot-bubble:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 0 #e3e3e3;
+}
+
+.pilot-stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+}
+
+/* Handschriftliche Notiz oben rechts im Kasten */
+.pilot-stat-note {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  font-family: 'Caveat', cursive;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+  color: #E48636;
+  transform: rotate(-6deg);
+}
+
+.pilot-stat-value {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: #0a0a0a;
+  white-space: nowrap;
+}
+
+.pilot-stat-label {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #6e6e73;
+}
+
+.pilot-section {
+  padding: 28px;
+}
+
+.pilot-fazit {
+  margin-bottom: 24px;
+}
+
+/* Fazit-Titel bleibt kleiner, er steht in einer Karte */
+.pilot-theme .pilot-fazit h2 {
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+/* Textmarker wie im Hero */
+.pilot-highlight {
+  background: linear-gradient(to bottom, transparent 45%, rgba(255, 104, 0, 0.4) 45%);
+  padding: 0 2px;
+  border-radius: 2px;
+  color: #0a0a0a;
+  font-weight: 700;
+}
+
+.pilot-section p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #6e6e73;
+}
+
+/* Rückmeldungen als Sprechblasen, abwechselnd links und rechts */
+.pilot-bubbles {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+}
+
+.pilot-bubble {
+  max-width: 85%;
+  padding: 24px 28px;
+  background-color: #fff;
+  border: 2px solid #e3e3e3;
+  border-radius: 24px;
+  box-shadow: 0 4px 0 #e3e3e3;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #0a0a0a;
+}
+
+/* Spitze Ecke zur Seite, von der die Blase kommt */
+.pilot-bubble:nth-child(odd) {
+  border-bottom-left-radius: 6px;
+}
+
+.pilot-bubble:nth-child(even) {
+  align-self: flex-end;
+  border-bottom-right-radius: 6px;
+}
+
+.pilot-bubble em {
+  font-style: normal;
+  color: #D4772A;
+}
+
+.pilot-source {
+  font-size: 13px;
+  color: #a1a1a6;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.pilot-back {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 15px;
+  font-weight: 700;
+  color: #6e6e73;
+}
+
+.pilot-back:hover {
+  color: #0a0a0a;
+}
+
+@media (max-width: 768px) {
+  .pilot-header,
+  .pilot-theme {
+    margin-bottom: 64px;
+  }
+
+  .pilot {
+    padding-top: 56px;
+    padding-bottom: 80px;
+  }
+
+  .pilot-header h1 {
+    letter-spacing: -1px;
+  }
+
+  .pilot-theme h2,
+  .pilot-section h2 {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+
+  .pilot-theme .pilot-fazit h2 {
+    font-size: 20px;
+  }
+
+  .pilot-intro,
+  .pilot-theme-text,
+  .pilot-section p,
+  .pilot-bubble {
+    font-size: 16px;
+  }
+
+  .pilot-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pilot-stats--four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pilot-stat {
+    padding: 20px;
+  }
+
+  .pilot-stat-value {
+    font-size: 32px;
+  }
+
+  .pilot-section {
+    padding: 20px;
+  }
+
+  .pilot-bubble {
+    max-width: 92%;
+    padding: 20px;
+  }
+}

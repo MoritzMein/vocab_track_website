@@ -1,45 +1,52 @@
+/* Footer im Stil der Nav: gleiche Ränder, gleiche Trennlinie */
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 48px;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  gap: 24px;
+  padding: 32px max(48px, calc((100% - 1280px) / 2 + 48px));
+  border-top: 2px solid #ece4d6;
 }
 
 .footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 15px;
   font-weight: 700;
+  letter-spacing: -0.2px;
   color: #1a1a1a;
 }
 
-.footer-right {
+.footer-links {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
-.footer-right a {
+.footer-links a {
   font-size: 14px;
-  font-weight: 500;
-  color: #888;
-  transition: color 0.15s;
+  font-weight: 600;
+  color: #6e6e73;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background-color 0.15s, color 0.15s;
 }
 
-.footer-right a:hover {
+.footer-links a:hover {
   color: #1a1a1a;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
-    align-items: center;
     gap: 16px;
-    padding: 24px 20px;
+    padding: 28px 20px 36px;
     text-align: center;
   }
 
-  .footer-right {
-    gap: 16px;
-    flex-wrap: wrap;
+  .footer-links {
     justify-content: center;
   }
 }

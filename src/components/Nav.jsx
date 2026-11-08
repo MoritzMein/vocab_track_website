@@ -1,21 +1,51 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './Nav.css'
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
+  const [dark, setDark] = useState(false)
+  const navRef = useRef(null)
+  const { pathname } = useLocation()
+
+  // Dark nav while it sits above a black section (data-nav-dark)
+  useEffect(() => {
+    const hero = document.querySelector('[data-nav-dark]')
+    if (!hero) {
+      setDark(false)
+      return
+    }
+    const update = () => {
+      const navHeight = navRef.current?.offsetHeight ?? 0
+      setDark(hero.getBoundingClientRect().bottom > navHeight)
+    }
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
+    return () => {
+      window.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
+    }
+  }, [pathname])
 
   return (
-    <nav className="nav">
+    <nav ref={navRef} className={`nav${dark ? ' nav--dark' : ''}`}>
       <div className="nav-left">
         <Link to="/" className="nav-brand-link" onClick={() => setOpen(false)}>
-          <div className="nav-icon">V</div>
+          <span className="nav-icon">
+            <img src="/app-icon.png" alt="" width="32" height="32" />
+            {/* Beim Hover wird aus dem Icon ein Pfeil zur Startseite */}
+            <span className="nav-icon-arrow" aria-hidden="true"><ArrowLeftIcon /></span>
+          </span>
           <span className="nav-brand">VocabTrack</span>
         </Link>
       </div>
       <div className="nav-right">
+        <Link to="/werdegang" className="nav-link">
+          Werdegang
+        </Link>
         <Link to="/schulen" className="nav-link">
-          Für Schulen
+          Antrag stellen
         </Link>
         <a
           href="https://apps.apple.com/de/app/vocab-track/id6753958684"
@@ -36,8 +66,11 @@ export default function Nav() {
       </div>
 
       <div className={`nav-mobile-menu${open ? ' nav-mobile-menu--open' : ''}`}>
+        <Link to="/werdegang" className="nav-mobile-link" onClick={() => setOpen(false)}>
+          Werdegang
+        </Link>
         <Link to="/schulen" className="nav-mobile-link" onClick={() => setOpen(false)}>
-          Für Schulen
+          Antrag stellen
         </Link>
         <a
           href="https://apps.apple.com/de/app/vocab-track/id6753958684"
@@ -51,6 +84,14 @@ export default function Nav() {
         </a>
       </div>
     </nav>
+  )
+}
+
+function ArrowLeftIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M13 8H3M7.5 3.5L3 8l4.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
   )
 }
 

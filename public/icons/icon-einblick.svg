@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Balkendiagramm">
+  <rect x="6" y="11" width="52" height="46" rx="12" fill="#E4E2DE"/>
+  <rect x="6" y="7" width="52" height="46" rx="12" fill="#FFFFFF"/><rect x="7" y="8" width="50" height="44" rx="11" fill="none" stroke="#D9D4C8" stroke-width="2"/>
+  <rect x="15" y="31" width="9" height="14" rx="4.5" fill="#EE6A5A"/>
+  <rect x="27.5" y="24" width="9" height="21" rx="4.5" fill="#F39443"/>
+  <rect x="40" y="16" width="9" height="29" rx="4.5" fill="#5FA857"/></svg>

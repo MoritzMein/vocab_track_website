@@ -1,63 +1,39 @@
-import { useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { useLayoutEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Nav from './components/Nav'
-import Hero from './components/Hero'
-import Problem from './components/Problem'
-import HowItWorks from './components/HowItWorks'
-import StudentView from './components/StudentView'
-import TeacherView from './components/TeacherView'
+import Home from './components/Home'
 import VokabelTest from './components/VokabelTest'
-import VokabelTestTeaser from './components/VokabelTestTeaser'
-import FAQ from './components/FAQ'
-import DownloadCTA from './components/DownloadCTA'
 import Footer from './components/Footer'
 import Feedback from './components/Feedback'
 import KontoLoeschen from './components/KontoLoeschen'
 import Schulen from './components/Schulen'
 import SchuelerPage from './components/SchuelerPage'
+import Werdegang from './components/Werdegang'
+import Pilotprojekt from './components/Pilotprojekt'
 
-function HomePage() {
-  useEffect(() => {
-    const els = document.querySelectorAll('[data-reveal]')
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible')
-        } else {
-          e.target.classList.remove('visible')
-        }
-      }),
-      { threshold: 0.1 }
-    )
-    els.forEach(el => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-
-  return (
-    <>
-      <Hero />
-      <Problem />
-      <HowItWorks />
-      <StudentView />
-      <TeacherView />
-      <VokabelTestTeaser />
-      <FAQ />
-      <DownloadCTA />
-    </>
-  )
+// Bei jedem Seitenwechsel oben starten; Links mit #Anker scrollen selbst
+function ScrollToTop() {
+  const { pathname, hash } = useLocation()
+  useLayoutEffect(() => {
+    if (!hash) window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [pathname, hash])
+  return null
 }
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Nav />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/konto-loeschen" element={<KontoLoeschen />} />
         <Route path="/schulen" element={<Schulen />} />
         <Route path="/schueler" element={<SchuelerPage />} />
         <Route path="/vokabeltest" element={<VokabelTest />} />
+        <Route path="/werdegang" element={<Werdegang />} />
+        <Route path="/pilotprojekt" element={<Pilotprojekt />} />
       </Routes>
       <Footer />
     </>

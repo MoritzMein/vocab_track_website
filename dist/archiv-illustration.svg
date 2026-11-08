@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 480" width="560" height="480" role="img" aria-label="Goldene Archivkarte, umgeben von Archivstempel, goldener Uhr und Punkteleiste">
+<title>VocabTrack – Gelernt bleibt gelernt</title>
+<style>
+  .va-an{transform-box:fill-box;transform-origin:center}
+  .va-puls{animation:va-puls 2.2s ease-in-out infinite}
+  .va-zeiger{animation:va-zurueck 6s ease-in-out infinite}
+  @keyframes va-schweben{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+  @keyframes va-schaukeln{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(5deg) translateY(-7px)}}
+  @keyframes va-funkeln{0%,100%{transform:scale(.3);opacity:0}50%{transform:scale(1);opacity:1}}
+  @keyframes va-puls{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+  @keyframes va-zurueck{0%,55%{transform:scale(2.6) rotate(0)}80%,100%{transform:scale(2.6) rotate(-360deg)}}
+  @media (prefers-reduced-motion:reduce){.va-an{animation:none!important}}
+</style>
+<g transform="translate(70 250) scale(1)"><path class="va-an" style="animation:va-funkeln 3s ease-in-out -1s infinite" d="M0 -8C1 -2 2 -1 8 0C2 1 1 2 0 8C-1 2 -2 1 -8 0C-2 -1 -1 -2 0 -8Z" fill="#E6C76A"/></g><g transform="translate(520 250) scale(0.8)"><path class="va-an" style="animation:va-funkeln 2.6s ease-in-out -0.4s infinite" d="M0 -8C1 -2 2 -1 8 0C2 1 1 2 0 8C-1 2 -2 1 -8 0C-2 -1 -1 -2 0 -8Z" fill="#E6C76A"/></g><g transform="translate(280 40) scale(0.9)"><path class="va-an" style="animation:va-funkeln 3.4s ease-in-out -2.1s infinite" d="M0 -8C1 -2 2 -1 8 0C2 1 1 2 0 8C-1 2 -2 1 -8 0C-2 -1 -1 -2 0 -8Z" fill="#E6C76A"/></g><g transform="translate(90 430) scale(0.7)"><path class="va-an" style="animation:va-funkeln 2.8s ease-in-out -1.5s infinite" d="M0 -8C1 -2 2 -1 8 0C2 1 1 2 0 8C-1 2 -2 1 -8 0C-2 -1 -1 -2 0 -8Z" fill="#E6C76A"/></g><g transform="translate(480 440) scale(0.8)"><path class="va-an" style="animation:va-funkeln 3.1s ease-in-out -0.8s infinite" d="M0 -8C1 -2 2 -1 8 0C2 1 1 2 0 8C-1 2 -2 1 -8 0C-2 -1 -1 -2 0 -8Z" fill="#E6C76A"/></g>
+<g transform="translate(146 96) rotate(-10) scale(1)"><g class="va-an" style="animation:va-schaukeln 5s ease-in-out infinite"><g transform="translate(-84 -24)"><rect y="4" width="168" height="48" rx="12" fill="#E8D9A6"/><rect width="168" height="48" rx="12" fill="#F5EBC8" stroke="#D4B04A" stroke-width="2.4"/>
+  <g transform="translate(30 24) scale(1.3)"><g fill="none" stroke="#C29A33" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M-7.5 2.7A8 8 0 1 1 -3 7.4"/><path d="M-5.3 1.3L-6.65 5.05L-10.1 3.05"/><path d="M0 -4V0L2.8 2.2"/></g></g><text x="50" y="31" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-weight="800" font-size="20" letter-spacing="2.6" fill="#C29A33">ARCHIV</text></g></g></g>
+<g transform="translate(458 112) rotate(6) scale(1)"><g class="va-an" style="animation:va-schweben 4.4s ease-in-out -2s infinite"><circle r="40" fill="#C29A33" transform="translate(0 5)"/><circle r="40" fill="#D4B04A"/><g class="va-an va-zeiger" transform="scale(2.6)"><g fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M-7.5 2.7A8 8 0 1 1 -3 7.4"/><path d="M-5.3 1.3L-6.65 5.05L-10.1 3.05"/><path d="M0 -4V0L2.8 2.2"/></g></g></g></g>
+<g transform="translate(280 248) rotate(-6) scale(1.9)"><g class="va-an" style="animation:va-schweben 5.6s ease-in-out -1s infinite"><g transform="translate(-75 -52.5)">
+  <rect y="5" width="150" height="105" rx="16" fill="#C29A33"/><rect width="150" height="105" rx="16" fill="#FCF8EA"/>
+  <rect x="1" y="1" width="148" height="103" rx="15" fill="none" stroke="#D4B04A" stroke-width="2"/>
+  <g transform="translate(12 14) rotate(-8)"><rect width="76" height="20" rx="5" fill="#F5EBC8" stroke="#D4B04A" stroke-width="1.6"/>
+    <g transform="translate(12 10) scale(.62)"><g fill="none" stroke="#C29A33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M-7.5 2.7A8 8 0 1 1 -3 7.4"/><path d="M-5.3 1.3L-6.65 5.05L-10.1 3.05"/><path d="M0 -4V0L2.8 2.2"/></g></g>
+    <text x="22" y="14" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-weight="800" font-size="9.5" letter-spacing="1.3" fill="#C29A33">ARCHIV</text></g>
+  <rect x="34" y="52" width="82" height="13" rx="6.5" fill="#4A3D1E"/><rect x="56" y="76" width="38" height="3" rx="1.5" fill="#D9CFA8"/></g></g></g>
+<g transform="translate(300 420) rotate(3) scale(1)"><g class="va-an" style="animation:va-schweben 4.8s ease-in-out -3s infinite"><rect x="-116" y="-20" width="232" height="48" rx="24" fill="#E4E2DE"/><rect x="-116" y="-24" width="232" height="48" rx="24" fill="#FFFFFF"/><rect x="-115.25" y="-23.25" width="230.5" height="46.5" rx="23.25" fill="none" stroke="#D9D4C8" stroke-width="1.5"/><circle cx="-90" cy="0" r="10" fill="#5FA857"/><circle cx="-60" cy="0" r="10" fill="#5FA857"/><circle cx="-30" cy="0" r="10" fill="#E2574C"/><circle class="va-an va-puls" cx="0" cy="0" r="10" fill="#D4B04A"/><circle cx="30" cy="0" r="10" fill="#5FA857"/><circle cx="60" cy="0" r="10" fill="#E8E5E0"/><circle cx="90" cy="0" r="10" fill="#E8E5E0"/></g></g>
+</svg>
