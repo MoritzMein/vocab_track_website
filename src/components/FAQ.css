@@ -1,35 +1,48 @@
+/* Häufige Fragen: aufklappbare Karten im Stil der Store-Buttons */
 .faq {
-  padding: 80px 48px;
-  box-sizing: border-box;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 96px 48px 32px;
   width: 100%;
 }
 
-.faq-inner {
-  max-width: 980px;
-  margin: 0 auto;
-}
-
 .faq-heading {
-  font-size: clamp(34px, 4.5vw, 56px);
-  font-weight: 700;
-  letter-spacing: -2.5px;
-  color: #1a1a1a;
-  line-height: 1.07;
-  margin-bottom: 48px;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: #0a0a0a;
   text-align: center;
+  margin-bottom: 48px;
 }
 
 .faq-list {
-  max-width: 720px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
 }
 
 .faq-item {
-  border-top: 1.5px solid #e0d8cc;
+  background-color: #fff;
+  border: 2px solid #e3e3e3;
+  border-radius: 20px;
+  box-shadow: 0 4px 0 #e3e3e3;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.faq-item:last-child {
-  border-bottom: 1.5px solid #e0d8cc;
+/* Anheben nur mit Maus: auf dem Handy bleibt :hover nach dem Tippen hängen
+   und die Karte hüpft zusätzlich zum Aufklappen */
+@media (hover: hover) {
+  .faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #e3e3e3;
+  }
+}
+
+.faq-item h3 {
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 .faq-question {
@@ -38,56 +51,67 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  padding: 20px 0;
+  padding: 20px 24px;
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
-  color: #1a1a1a;
+  letter-spacing: -0.2px;
   line-height: 1.4;
+  color: #0a0a0a;
 }
 
 .faq-icon {
-  flex-shrink: 0;
-  font-size: 20px;
-  font-weight: 700;
-  color: #FF6800;
-  transition: transform 0.2s;
-  line-height: 1;
+  flex: none;
+  color: #a1a1a6;
+  transition: transform 0.25s ease;
 }
 
+.faq-item--open .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* Weiches Auf- und Zuklappen, Höhe setzt FAQ.jsx in Pixeln */
 .faq-answer {
   overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.faq-item.open .faq-answer {
-  max-height: 200px;
-  padding-bottom: 20px;
+  transition: height 0.25s ease;
 }
 
 .faq-answer p {
-  font-size: 15px;
-  color: #666;
+  padding: 0 24px 22px;
+  font-size: 16px;
   line-height: 1.6;
-  margin: 0;
+  color: #6e6e73;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .faq {
-    padding: 60px 20px;
+    padding: 64px 20px 16px;
   }
 
   .faq-heading {
-    letter-spacing: -1.5px;
+    letter-spacing: -1px;
     margin-bottom: 32px;
   }
 
   .faq-question {
+    font-size: 16px;
+    padding: 18px 20px;
+  }
+
+  .faq-answer p {
+    padding: 0 20px 20px;
     font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item,
+  .faq-icon,
+  .faq-answer {
+    transition: none;
   }
 }

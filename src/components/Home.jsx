@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { mountLehrerIllustration } from '../illustrations/lehrerIllustration'
+import FAQ from './FAQ'
 import './Home.css'
 
 // TODO: echten Play-Store-Link eintragen
@@ -46,8 +47,8 @@ export default function Home() {
         <div className="home-hero-content">
           <p className="home-brand"><span>VocabTrack</span></p>
           <h1>
-            <span>Lernen miteinander</span>
-            <span>anstatt gegeneinander</span>
+            <span>Die Vokabel-App</span>
+            <span>für die ganze Klasse</span>
           </h1>
           <div className="home-cta">
             <div className="home-cta-buttons">
@@ -104,14 +105,19 @@ export default function Home() {
       </section>
 
       <section className="home-languages" aria-label="Sprachen in VocabTrack">
-        <ul>
-          {LANGUAGES.map(lang => (
-            <li key={lang.name} className={`home-language${lang.wide ? ' home-language--wide' : ''}`}>
-              <img src={lang.icon} alt="" width="30" height="30" />
-              {lang.name}
-            </li>
+        {/* Auf dem Handy als Laufband: die Liste steht doppelt da, damit es nahtlos weiterläuft */}
+        <div className="home-languages-track">
+          {[false, true].map(copy => (
+            <ul key={String(copy)} className={copy ? 'home-languages-copy' : undefined} aria-hidden={copy || undefined}>
+              {LANGUAGES.map(lang => (
+                <li key={lang.name} className={`home-language${lang.wide ? ' home-language--wide' : ''}`}>
+                  <img src={lang.icon} alt="" width="30" height="30" />
+                  {lang.name}
+                </li>
+              ))}
+            </ul>
           ))}
-        </ul>
+        </div>
       </section>
 
       {FEATURES.map((feature, i) => (
@@ -132,6 +138,8 @@ export default function Home() {
           )}
         </section>
       ))}
+
+      <FAQ />
     </main>
   )
 }

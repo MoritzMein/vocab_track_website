@@ -1,65 +1,123 @@
-import { useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import './FAQ.css'
 
 const FAQS = [
   {
-    q: 'Wie funktioniert das Abo?',
-    a: '0,99 € pro Monat, jederzeit kündbar — direkt über den App Store oder Google Play.',
+    q: 'Was ist VocabTrack?',
+    a: 'VocabTrack ist eine Vokabel-App für Schulklassen. Lehrer und Schüler lernen damit gemeinsam: Die Klasse übt die Vokabeln in der App, und der Lehrer sieht nach jeder Übung, wer gelernt hat.',
   },
   {
-    q: 'Kann ich die App ohne Lehrer nutzen?',
-    a: 'Nein, du brauchst einen aktiven Kurs von deinem Lehrer — ohne Einladungscode gibt es keine Lektionen.',
+    q: 'Was bedeutet klasseninternes Vokabellernen?',
+    a: 'Die ganze Klasse lernt dieselben Vokabeln in einem gemeinsamen Kurs, statt dass jeder Schüler für sich allein übt. So sieht der Lehrer jederzeit, wo die Klasse steht.',
   },
   {
-    q: 'Wie bekomme ich einen Einladungscode?',
-    a: 'Von deiner Lehrkraft — sie teilt ihn mit der Klasse, z. B. per Elternbrief oder im Unterricht.',
+    q: 'Wie funktioniert VocabTrack im Klassenverband?',
+    a: 'Der Lehrer legt einen Kurs an, und die Schüler treten mit einem Einladungscode bei. Danach lernt die Klasse gemeinsam, und der Lehrer sieht nach jeder Übung, wer teilgenommen hat und wie gut.',
   },
   {
-    q: 'Wie registriere ich mich als Lehrer?',
-    a: 'Den Zugangscode erhältst du von deiner Schulleitung. Bei der Registrierung dann einfach „Ich bin Lehrer" auswählen. Lehrer zahlen nichts.',
+    q: 'Welche Sprachen gibt es?',
+    a: 'Englisch, Französisch, Spanisch und Latein.',
   },
   {
-    q: 'Welche Fächer werden unterstützt?',
-    a: 'Ausschließlich Fremdsprachen und Vokabeltraining.',
+    q: 'Kann man mit VocabTrack Vokabeltests schreiben?',
+    a: 'Ja. Der Test ist in wenigen Minuten erstellt, die Schüler schreiben ihn auf dem iPad, und die App korrigiert und wertet ihn aus. Wer kein iPad hat, bekommt den Test auf Papier.',
   },
   {
-    q: 'Gibt es eine Web-Version?',
-    a: 'Nein, VocabTrack gibt es nur als iOS- und Android-App.',
+    q: 'Ist VocabTrack DSGVO-konform?',
+    a: 'Ja. VocabTrack ist DSGVO-konform, und alle Daten werden auf Servern in Frankfurt gespeichert.',
   },
   {
-    q: 'Was sind Tickets?',
-    a: 'Eine Belohnungswährung: durch gute Leistungen verdient, für Premium-Spiele wie Tetris und Block Blast einlösen.',
+    q: 'Wie bekommen Lehrer Zugang zu VocabTrack?',
+    a: 'Zuerst nimmt die Schule über diese Website Kontakt auf. Gemeinsam wird geklärt, wie VocabTrack an der Schule eingesetzt werden kann. Hat sich die Schule entschieden, VocabTrack zu nutzen, bekommen die Lehrer einen Zugangscode. Damit registrieren sie sich in der App als Lehrer, legen ihre Kurse an und laden ihre Klassen per Einladungscode ein.',
   },
 ]
+
+// FAQ-Daten für Google und KI-Suchen (schema.org FAQPage)
+const FAQ_SCHEMA = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+})
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null)
 
-  function toggle(i) {
-    setOpenIndex(openIndex === i ? null : i)
-  }
+  return (
+    <section className="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" className="faq-heading">Häufige Fragen</h2>
+      <ul className="faq-list">
+        {FAQS.map((item, i) => {
+          const isOpen = openIndex === i
+          return (
+            <li key={item.q} className={`faq-item${isOpen ? ' faq-item--open' : ''}`}>
+              <h3>
+                <button
+                  className="faq-question"
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${i}`}
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                >
+                  <span>{item.q}</span>
+                  <PlusIcon />
+                </button>
+              </h3>
+              {/* Antwort steht immer im HTML, damit Suchmaschinen sie lesen können */}
+              <Answer id={`faq-answer-${i}`} open={isOpen} text={item.a} />
+            </li>
+          )
+        })}
+      </ul>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: FAQ_SCHEMA }} />
+    </section>
+  )
+}
+
+// Antwort mit fester Pixelhöhe auf- und zuklappen. Das läuft auf dem iPhone flüssiger
+// als das Animieren der Rasterhöhe, weil der Text darin nicht ständig neu umbrechen muss.
+// Beim Vorrendern auf dem Server gibt es kein Layout, dort reicht useEffect
+const useBrowserLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect
+
+function Answer({ id, open, text }) {
+  const ref = useRef(null)
+  const first = useRef(true)
+
+  useBrowserLayoutEffect(() => {
+    const el = ref.current
+    if (first.current) {
+      first.current = false
+      return
+    }
+    const full = el.scrollHeight
+    if (open) {
+      el.style.height = '0px'
+      el.getBoundingClientRect() // Ausgangshöhe festschreiben, damit die Animation startet
+      el.style.height = `${full}px`
+    } else {
+      el.style.height = `${full}px`
+      el.getBoundingClientRect()
+      el.style.height = '0px'
+    }
+    // Nach dem Aufklappen wieder frei wachsen lassen (z. B. beim Drehen des Handys).
+    // Zeitgeber statt transitionend, weil das ohne Animation (reduzierte Bewegung) nie kommt.
+    const timer = setTimeout(() => { if (open) el.style.height = 'auto' }, 300)
+    return () => clearTimeout(timer)
+  }, [open])
 
   return (
-    <section className="faq" data-reveal>
-      <div className="faq-inner">
-        <h2 className="faq-heading">Häufige Fragen</h2>
-        <div className="faq-list">
-          {FAQS.map((item, i) => {
-            const isOpen = openIndex === i
-            return (
-              <div key={i} className={`faq-item${isOpen ? ' open' : ''}`}>
-                <button className="faq-question" onClick={() => toggle(i)}>
-                  <span>{item.q}</span>
-                  <span className="faq-icon">{isOpen ? '−' : '+'}</span>
-                </button>
-                <div className="faq-answer">
-                  <p>{item.a}</p>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      </div>
-    </section>
+    <div id={id} ref={ref} className="faq-answer" style={{ height: 0 }}>
+      <p>{text}</p>
+    </div>
+  )
+}
+
+function PlusIcon() {
+  return (
+    <svg className="faq-icon" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+      <path d="M10 4v12M4 10h12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+    </svg>
   )
 }

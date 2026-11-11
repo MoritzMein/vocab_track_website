@@ -1,7 +1,7 @@
 .werdegang {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 112px 48px 128px;
+  padding: 112px 48px 80px;
 }
 
 .werdegang-header {
@@ -155,6 +155,7 @@
   border: 2px solid #e3e3e3;
   border-radius: 20px;
   box-shadow: 0 4px 0 #e3e3e3;
+  white-space: nowrap;
   transition: background-color 0.15s, transform 0.1s, box-shadow 0.1s;
 }
 
@@ -171,7 +172,7 @@
 
 @media (max-width: 768px) {
   .werdegang {
-    padding: 56px 20px 80px;
+    padding: 56px 20px 72px;
   }
 
   .werdegang-header {
@@ -202,7 +203,21 @@
     width: 100%;
     height: auto;
     min-height: 0;
-    margin-right: 0;
+    margin: 16px 0 0;
+  }
+
+  /* Illustration zwischen Text und Button statt ganz unten */
+  .werdegang-card--image {
+    gap: 0;
+  }
+
+  .werdegang-card--image .werdegang-card-text {
+    display: contents;
+  }
+
+  .werdegang-card--image .werdegang-button {
+    order: 1;
+    justify-self: start;
   }
 
 

@@ -1,0 +1,5 @@
+# Alle Suchmaschinen und KI-Crawler sind willkommen
+User-agent: *
+Allow: /
+
+Sitemap: https://www.vocab-track.com/sitemap.xml

@@ -1,8 +1,8 @@
-/* Antrag stellen: gleicher Aufbau wie Werdegang und Pilotprojekt */
+/* Kontakt aufnehmen: gleicher Aufbau wie Werdegang und Pilotprojekt */
 .schulen {
   max-width: 880px;
   margin: 0 auto;
-  padding: 112px 20px 128px;
+  padding: 112px 20px 80px;
 }
 
 .schulen-header {
@@ -166,6 +166,20 @@
   color: #6e6e73;
 }
 
+.schulen-pilot-short {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .schulen-pilot-long {
+    display: none;
+  }
+
+  .schulen-pilot-short {
+    display: block;
+  }
+}
+
 /* Formular */
 .schulen-form {
   display: flex;
@@ -253,7 +267,7 @@
 @media (max-width: 768px) {
   .schulen {
     padding-top: 56px;
-    padding-bottom: 80px;
+    padding-bottom: 72px;
   }
 
   .schulen-header,
@@ -279,25 +293,35 @@
     gap: 12px;
   }
 
+  /* Untereinander: Icon links neben dem Titel statt darüber, damit die Karte nicht leer wirkt */
   .schulen-card {
-    padding: 24px 20px;
+    flex-direction: row;
+    gap: 16px;
+    padding: 14px 18px;
+    text-align: left;
   }
 
   .schulen-card-icon {
-    width: 56px;
-    height: 56px;
+    flex: none;
+    width: 44px;
+    height: 44px;
   }
 
   .schulen-card h3 {
-    font-size: 20px;
+    font-size: 17px;
+    white-space: normal;
   }
 
   .schulen-pilot {
-    padding: 20px;
+    padding: 18px 20px;
   }
 
-  .schulen-intro,
-  .schulen-pilot p {
+  .schulen-intro {
     font-size: 16px;
+  }
+
+  .schulen-pilot p {
+    font-size: 15px;
+    line-height: 1.5;
   }
 }

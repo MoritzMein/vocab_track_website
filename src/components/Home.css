@@ -1,7 +1,7 @@
 .home {
   overflow-x: clip;
-  /* Luft zwischen letztem Abschnitt und Footer */
-  padding-bottom: 96px;
+  /* Luft zwischen letztem Abschnitt und Footer, gleich wie auf den anderen Seiten */
+  padding-bottom: 80px;
   display: flex;
   flex-direction: column;
   /* Sprachleiste etwas oberhalb des Bildschirmrands */
@@ -180,6 +180,11 @@
   list-style: none;
 }
 
+/* Zweite Kopie nur fürs Laufband auf dem Handy */
+.home-languages-copy {
+  display: none !important;
+}
+
 /* Sprach-Pille: weiß, Rand innen, feste Kante unten */
 .home-language {
   display: inline-flex;
@@ -249,6 +254,8 @@
 .home-feature-image {
   width: 100%;
   max-width: 560px;
+  /* Höhe aus der Breite berechnen, sonst bleibt das height-Attribut (480) stehen */
+  height: auto;
   aspect-ratio: 560 / 480;
   justify-self: center;
 }
@@ -267,7 +274,8 @@
 @media (max-width: 768px) {
   .home-feature {
     grid-template-columns: 1fr;
-    gap: 32px;
+    /* Die Illustrationen haben oben schon etwas Luft im Bild */
+    gap: 12px;
     padding: 64px 20px;
     text-align: center;
   }
@@ -333,13 +341,72 @@
 }
 
 @media (max-width: 480px) {
+  .home {
+    padding-bottom: 72px;
+  }
+
+  /* Sprachen als Laufband: eine Zeile, läuft langsam von rechts nach links */
+  .home-languages {
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .home-languages-track {
+    display: flex;
+    width: max-content;
+    animation: languages-marquee 16s linear infinite;
+  }
+
+  .home-languages ul,
+  .home-languages .home-languages-copy {
+    display: flex !important;
+    flex-wrap: nowrap;
+    /* Abstand am Ende = Abstand zwischen den Chips, damit die Naht nicht auffällt */
+    padding: 2px 10px 6px 0;
+  }
+
+  .home-language {
+    flex: none;
+  }
+
+  /* Kein iPhone auf dem Handy: Bausteine wären abgeschnitten, Handy im Handy wirkt doppelt */
+  .home-stage {
+    display: none;
+  }
+
+  /* Untereinander, gleich breit, aber nicht über die volle Breite */
   .home-cta-buttons {
     flex-direction: column;
     width: 100%;
+    max-width: 260px;
   }
 
   .home-button {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@keyframes languages-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Ohne Bewegung: Laufband anhalten und wieder umbrechen lassen */
+@media (prefers-reduced-motion: reduce) and (max-width: 480px) {
+  .home-languages-track {
+    width: auto;
+    animation: none;
+  }
+
+  .home-languages ul {
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+
+  .home-languages .home-languages-copy {
+    display: none !important;
   }
 }

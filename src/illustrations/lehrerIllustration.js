@@ -237,11 +237,14 @@ function Illustration(box) {
     });
   }
 
-  // Einmal spielen, sobald die Mitte der Illustration im oberen Teil des Bildschirms ist
+  // Einmal spielen, sobald die Mitte der Illustration im oberen Teil des Bildschirms ist.
+  // Auf dem Handy steht sie unter dem Text und wäre sonst schon lange sichtbar, bevor es losgeht:
+  // dort reicht es, wenn sie größtenteils im Bild ist.
   function pruefen() {
     var r = box.getBoundingClientRect();
     var mitte = (r.top + r.bottom) / 2;
-    if (r.bottom > 0 && mitte < window.innerHeight * 0.65) {
+    var grenze = window.innerWidth <= 900 ? 0.85 : 0.65;
+    if (r.bottom > 0 && mitte < window.innerHeight * grenze) {
       aufhoeren();
       losgehen();
     }

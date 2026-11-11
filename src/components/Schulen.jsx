@@ -31,7 +31,7 @@ export default function Schulen() {
     return (
       <main className="schulen page-enter">
         <div className="schulen-header">
-          <p className="schulen-brand"><span>Antrag stellen</span></p>
+          <p className="schulen-brand"><span>Kontakt aufnehmen</span></p>
           <h1>Vielen Dank!</h1>
           <p className="schulen-intro">
             Ihre Anfrage ist eingegangen. Wir melden uns schnellstmöglich bei Ihnen.
@@ -45,7 +45,7 @@ export default function Schulen() {
   return (
     <main className="schulen page-enter">
       <header className="schulen-header">
-        <p className="schulen-brand"><span>Antrag stellen</span></p>
+        <p className="schulen-brand"><span>Kontakt aufnehmen</span></p>
         <h1>Vokabellernen neu gedacht für Ihre Schule</h1>
         <p className="schulen-intro">
           VocabTrack verbindet Lehrer und Schüler digital. Weniger Aufwand für Lehrkräfte, mehr Lernfortschritt für Schüler — und voller Überblick für die Kursleitung.
@@ -66,8 +66,12 @@ export default function Schulen() {
 
       <section className="schulen-section schulen-pilot">
         <h2>Zwei Monate kostenlos testen</h2>
-        <p>
+        {/* Ausführlich auf dem Desktop, kürzer auf dem Handy (Umschalten in Schulen.css) */}
+        <p className="schulen-pilot-long">
           Wir kommen an Ihre Schule und erklären VocabTrack in Ruhe. Danach testen Sie die App zwei Monate lang kostenlos in einigen Kursen. Erst dann entscheiden Sie, ob Sie VocabTrack weiter nutzen möchten.
+        </p>
+        <p className="schulen-pilot-short">
+          Wir stellen VocabTrack an Ihrer Schule vor. Danach testen Sie die App zwei Monate kostenlos in einigen Kursen und entscheiden erst dann.
         </p>
       </section>
 

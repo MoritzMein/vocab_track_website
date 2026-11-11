@@ -1,7 +1,7 @@
 .pilot {
   max-width: 880px;
   margin: 0 auto;
-  padding: 112px 20px 128px;
+  padding: 112px 20px 80px;
 }
 
 .pilot-header {
@@ -247,7 +247,7 @@
 
   .pilot {
     padding-top: 56px;
-    padding-bottom: 80px;
+    padding-bottom: 72px;
   }
 
   .pilot-header h1 {

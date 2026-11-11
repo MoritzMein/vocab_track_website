@@ -41,11 +41,17 @@ export default function Nav() {
         </Link>
       </div>
       <div className="nav-right">
+        <Link to="/konzept" className="nav-link">
+          Konzept
+        </Link>
         <Link to="/werdegang" className="nav-link">
           Werdegang
         </Link>
+        <Link to="/wissenschaft" className="nav-link">
+          Wissenschaft
+        </Link>
         <Link to="/schulen" className="nav-link">
-          Antrag stellen
+          Kontakt aufnehmen
         </Link>
         <a
           href="https://apps.apple.com/de/app/vocab-track/id6753958684"
@@ -66,11 +72,17 @@ export default function Nav() {
       </div>
 
       <div className={`nav-mobile-menu${open ? ' nav-mobile-menu--open' : ''}`}>
+        <Link to="/konzept" className="nav-mobile-link" onClick={() => setOpen(false)}>
+          Konzept
+        </Link>
         <Link to="/werdegang" className="nav-mobile-link" onClick={() => setOpen(false)}>
           Werdegang
         </Link>
+        <Link to="/wissenschaft" className="nav-mobile-link" onClick={() => setOpen(false)}>
+          Wissenschaft
+        </Link>
         <Link to="/schulen" className="nav-mobile-link" onClick={() => setOpen(false)}>
-          Antrag stellen
+          Kontakt aufnehmen
         </Link>
         <a
           href="https://apps.apple.com/de/app/vocab-track/id6753958684"

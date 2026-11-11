@@ -93,12 +93,15 @@
   transition: transform 0.2s ease;
 }
 
-.nav-brand-link:hover .nav-icon-arrow {
-  opacity: 1;
-}
+/* Nur mit Maus: auf dem Handy bliebe der Pfeil nach dem Antippen dunkel auf dem Icon stehen */
+@media (hover: hover) {
+  .nav-brand-link:hover .nav-icon-arrow {
+    opacity: 1;
+  }
 
-.nav-brand-link:hover .nav-icon-arrow svg {
-  transform: translateX(0);
+  .nav-brand-link:hover .nav-icon-arrow svg {
+    transform: translateX(0);
+  }
 }
 
 .nav-right {

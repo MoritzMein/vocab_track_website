@@ -9,6 +9,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
+  /* Kein grauer Kasten beim Antippen auf dem iPhone; Karten und Buttons haben eigene Rückmeldung */
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -93,4 +95,10 @@ a {
   html .schulen-button:hover {
     transform: none;
   }
+}
+
+/* Letzter Abschnitt einer Seite: kein eigener Abstand nach unten, den Abstand zum Footer
+   gibt allein das Seiten-Padding vor */
+#root > :nth-last-child(2) > :last-child {
+  margin-bottom: 0 !important;
 }

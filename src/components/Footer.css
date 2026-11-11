@@ -50,3 +50,24 @@
     justify-content: center;
   }
 }
+
+/* Handy: etwas kompakter, damit alle drei Links in eine Zeile passen */
+@media (max-width: 480px) {
+  .footer-links {
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+  .footer-links a {
+    padding: 8px 9px;
+    white-space: nowrap;
+  }
+}
+
+/* Sehr schmale Handys: passt nicht nebeneinander, dann sauber untereinander */
+@media (max-width: 359px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}

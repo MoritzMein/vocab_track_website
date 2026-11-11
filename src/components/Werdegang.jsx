@@ -29,7 +29,7 @@ const STATIONS = [
     title: 'Schulen in ganz Deutschland',
     text: 'Als Nächstes soll VocabTrack an Schulen in ganz Deutschland ankommen. Möchten Sie mit Ihrer Schule Teil davon werden?',
     future: true,
-    cta: { label: 'Jetzt Antrag stellen', to: '/schulen#anfrage' },
+    cta: { label: 'Jetzt Kontakt aufnehmen', to: '/schulen#anfrage' },
     image: '/schulen-illustration.svg',
     alt: 'Deutschlandkarte mit der Schule in NRW, an der VocabTrack läuft, und Orten, die dazukommen',
   },
@@ -48,7 +48,7 @@ export default function Werdegang() {
           <li key={station.title} className={`werdegang-station${station.future ? ' werdegang-station--future' : ''}`}>
             <span className="werdegang-dot" aria-hidden="true" />
             <div className={`werdegang-card${station.image ? ' werdegang-card--image' : ''}`}>
-              <div>
+              <div className="werdegang-card-text">
                 <p className="werdegang-date">{station.date}</p>
                 <h2>{station.title}</h2>
                 <p>{station.text}</p>
