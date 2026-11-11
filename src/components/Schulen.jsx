@@ -120,6 +120,11 @@ export default function Schulen() {
           >
             {state.submitting ? 'Wird gesendet...' : 'Anfrage senden'}
           </button>
+          <p className="form-privacy">
+            Ihre Angaben verwenden wir nur, um Ihre Anfrage zu beantworten. Das Formular wird über
+            den Dienst Formspree übermittelt. Mehr dazu in der{' '}
+            <a href="/datenschutzerklaerung.pdf" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a>.
+          </p>
         </form>
       </section>
     </main>

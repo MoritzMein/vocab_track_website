@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600;700;800;900&display=swap');
+/* Schriften liegen lokal (src/main.jsx), nicht bei Google: keine Besucherdaten an Dritte */
 
 * {
   margin: 0;
@@ -101,4 +101,18 @@ a {
    gibt allein das Seiten-Padding vor */
 #root > :nth-last-child(2) > :last-child {
   margin-bottom: 0 !important;
+}
+
+/* Datenschutzhinweis unter Formularen */
+.form-privacy {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #a1a1a6;
+  text-align: center;
+}
+
+.form-privacy a {
+  color: #6e6e73;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }

@@ -3,8 +3,7 @@ import { mountLehrerIllustration } from '../illustrations/lehrerIllustration'
 import FAQ from './FAQ'
 import './Home.css'
 
-// TODO: echten Play-Store-Link eintragen
-const PLAY_STORE_URL = '#'
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.vocabtrack.app'
 
 const LANGUAGES = [
   { icon: '/languages/englisch.svg', name: 'Englisch' },

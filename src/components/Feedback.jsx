@@ -97,6 +97,11 @@ export default function Feedback() {
           >
             {state.submitting ? 'Wird gesendet...' : 'Absenden'}
           </button>
+          <p className="form-privacy">
+            Deine Angaben verwenden wir nur, um dein Feedback zu bearbeiten. Das Formular wird über
+            den Dienst Formspree übermittelt. Mehr dazu in der{' '}
+            <a href="/datenschutzerklaerung.pdf" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a>.
+          </p>
 
           {state.errors && (Array.isArray(state.errors) ? state.errors.length > 0 : Object.keys(state.errors).length > 0) && (
             <p className="feedback-error">

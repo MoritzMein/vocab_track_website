@@ -24,11 +24,11 @@ const FAQS = [
   },
   {
     q: 'Ist VocabTrack DSGVO-konform?',
-    a: 'Ja. VocabTrack ist DSGVO-konform, und alle Daten werden auf Servern in Frankfurt gespeichert.',
+    a: 'Ja. Die Daten der App werden in Rechenzentren in der EU (Frankfurt) gespeichert. Alle Dienstleister, die Daten verarbeiten, sind vertraglich nach der DSGVO verpflichtet. Welche das sind, steht in der Datenschutzerklärung.',
   },
   {
     q: 'Wie bekommen Lehrer Zugang zu VocabTrack?',
-    a: 'Zuerst nimmt die Schule über diese Website Kontakt auf. Gemeinsam wird geklärt, wie VocabTrack an der Schule eingesetzt werden kann. Hat sich die Schule entschieden, VocabTrack zu nutzen, bekommen die Lehrer einen Zugangscode. Damit registrieren sie sich in der App als Lehrer, legen ihre Kurse an und laden ihre Klassen per Einladungscode ein.',
+    a: 'Zuerst nimmt die Schule Kontakt mit uns auf, zum Beispiel über diese Website. Gemeinsam wird geklärt, wie VocabTrack an der Schule eingesetzt werden kann. Hat sich die Schule entschieden, VocabTrack zu nutzen, bekommen die Lehrer einen Zugangscode. Damit registrieren sie sich in der App als Lehrer, legen ihre Kurse an und laden ihre Klassen per Einladungscode ein.',
   },
 ]
 
